@@ -1,5 +1,4 @@
-#
-login# start_btn# stop_btn# replay_btn
+
 
 function validateProfile() {
 
