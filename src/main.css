@@ -1,75 +1,98 @@
 * {
-    font-family: 'IBM Plex Sans', sans-serif;
+  font-family: "IBM Plex Sans", sans-serif;
 }
 
-
 /* MAIN SECTION */
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+}
+
 .main-page-section {
-    display: block;
-    border: 1px solid black;
-    height: 35rem;
-    width: 17rem;
-    padding: 2rem;
+  display: none;
+  border: 1px solid rgb(39, 38, 38);
+  height: 35rem;
+  min-width: 320px;
+  max-width: 480px;
+  padding: 2rem;
+  border-radius: 25px;
+  box-shadow: 0px 0px 20px 10px #00000069;
+  background-color: #cf2e2e;
 }
 
 .content-wrapper {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid red;
-    height: 23rem;
-    padding: 1rem;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid red;
+  background-color: white;
+  height: 23rem;
+  padding: 1rem;
+  text-align: center;
 }
 
 .title {
-    border: 1px solid green;
+  border: 1px solid green;
 }
 
-.user-content{
-    border: 1px solid blue;
+.user-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 1px solid blue;
+}
+
+.username {
+  width: min-content;
+}
+
+.general-start-btn {
+  width: min-content;
 }
 
 .ranking-button {
-    text-align: center;
-    border: 1px solid violet;
+  text-align: center;
 }
 
 .main-logo {
-    text-align: center;
-    margin-bottom: 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .main-logo img {
-    height: auto;
-    width: auto;
+  border-radius: 50%;
+  height: auto;
+  width: auto;
 }
-
-
 
 /* START GAME SECTION */
 
-.start-game-section{
-    display: none;
-    border: 1px solid black;
-    border: 1px solid black;
-    height: 35rem;
-    width: 17rem;
-    padding: 2rem;
+.start-game-section {
+  display: none;
+  border: 1px solid black;
+  border: 1px solid black;
+  height: 35rem;
+  width: 17rem;
+  padding: 2rem;
 }
 
 .game-logo {
-    text-align: center;
-    margin-bottom: 1rem;
-    margin-top: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  margin-top: 2rem;
 }
 
 .game-logo img {
-    height: auto;
-    width: auto;
+  height: auto;
+  width: auto;
 }
 
+/* RANKING */
+.ranking-button {
+  background-color: white;
+}
 
 /* FINISH SECTION */
 .finish-section {
-    display: none;
+  display: block;
 }
