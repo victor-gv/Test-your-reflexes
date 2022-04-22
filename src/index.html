@@ -12,8 +12,6 @@
 <body>
     <main>
         <div class="page-wrapper">
-
-            <!-- Main page section -->
             <section class="main-page-section">
                 <div class="main-logo"><img src="/assets/logo-assembler.jpg" alt="Logo Assembler Institute"></div>
                 <div class="content-wrapper">
@@ -24,39 +22,32 @@
                     <div class="user-content">
                         <p>Enter your name:</p>
                         <input type="text">
-                        <button>START</button>
+                        <button id="login">START</button>
                     </div>
                 </div>
                 <div class="ranking-button">
                     <i class="fa-solid fa-ranking-star"></i>
                 </div>
             </section>
-
-            <!-- Game page section -->
             <section class="start-game-section">
                 <div class="game-logo"><img src="/assets/logo-assembler.jpg" alt="Logo Assembler Institute"></div>
                 <div class="start-game">
-                    <button>START GAME</button>
+                    <button id="start_btn">START GAME</button>
                     <div class="get-ready">Get ready...</div>
-                    <button>Stop game</button>
+                    <button stop_btn>Stop game</button>
                 </div>
             </section>
-
-            <!-- Finish page section -->
             <section class="finish-section">
                 <div class="score">
                     <h3>Your score</h3>
                     <p>Your reaction time was:</p>
-                    <p><span></span>seconds 🎉</p>
-                    <button>Play again</button>
+                    <p><span id=""></span>seconds 🎉</p>
+                    <button id="replay_btn">Play again</button>
                 </div>
             </section>
-
-            <!-- Ranking -->
             <section class="ranking">
                 <h3>User scores</h3>
             </section>
-            
         </div>
     </main>
 </body>
