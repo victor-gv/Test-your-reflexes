@@ -1,0 +1,75 @@
+* {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+
+/* MAIN SECTION */
+.main-page-section {
+    display: block;
+    border: 1px solid black;
+    height: 35rem;
+    width: 17rem;
+    padding: 2rem;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+    height: 23rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.title {
+    border: 1px solid green;
+}
+
+.user-content{
+    border: 1px solid blue;
+}
+
+.ranking-button {
+    text-align: center;
+    border: 1px solid violet;
+}
+
+.main-logo {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.main-logo img {
+    height: auto;
+    width: auto;
+}
+
+
+
+/* START GAME SECTION */
+
+.start-game-section{
+    display: none;
+    border: 1px solid black;
+    border: 1px solid black;
+    height: 35rem;
+    width: 17rem;
+    padding: 2rem;
+}
+
+.game-logo {
+    text-align: center;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.game-logo img {
+    height: auto;
+    width: auto;
+}
+
+
+/* FINISH SECTION */
+.finish-section {
+    display: none;
+}

@@ -1,0 +1,9 @@
+
+/* RESET */
+@import './reset.css';
+
+/* FONTS */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&family=IBM+Plex+Serif:wght@100;200&family=Work+Sans:wght@500;600&display=swap');
+
+/* GENERAL STYLES */
+@import './main.css'
