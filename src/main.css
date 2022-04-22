@@ -4,18 +4,29 @@
 
 
 /* MAIN SECTION */
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 30px;
+}
+
 .main-page-section {
     display: block;
-    border: 1px solid black;
+    border: 1px solid rgb(39, 38, 38);
     height: 35rem;
-    width: 17rem;
+    min-width: 320px;
+    max-width: 480px;
     padding: 2rem;
+    border-radius: 25px;
+    box-shadow: 0px 0px 20px 10px #00000069;
+    background-color: #cf2e2e;
 }
 
 .content-wrapper {
     display: flex;
     flex-direction: column;
     border: 1px solid red;
+    background-color: white;
     height: 23rem;
     padding: 1rem;
     text-align: center;
@@ -25,13 +36,23 @@
     border: 1px solid green;
 }
 
-.user-content{
+.user-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border: 1px solid blue;
+}
+
+.username {
+    width: min-content;
+}
+
+.start-btn {
+    width: min-content;
 }
 
 .ranking-button {
     text-align: center;
-    border: 1px solid violet;
 }
 
 .main-logo {
@@ -40,6 +61,7 @@
 }
 
 .main-logo img {
+    border-radius: 50%;
     height: auto;
     width: auto;
 }
@@ -48,7 +70,7 @@
 
 /* START GAME SECTION */
 
-.start-game-section{
+.start-game-section {
     display: none;
     border: 1px solid black;
     border: 1px solid black;
@@ -66,6 +88,12 @@
 .game-logo img {
     height: auto;
     width: auto;
+}
+
+
+/* RANKING */
+.ranking-button {
+    background-color: white;
 }
 
 

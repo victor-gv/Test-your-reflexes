@@ -1,63 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://kit.fontawesome.com/42bc4784db.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/42bc4784db.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="main.js"></script>
     <title>Test your reflexes</title>
-</head>
-<body>
+  </head>
+
+  <body>
     <main>
-        <div class="page-wrapper">
+      <div class="page-wrapper">
+        <!-- Main page section -->
+        <section class="main-page-section">
+          <div class="main-logo">
+            <img
+              src="/assets/logo-assembler.jpg"
+              alt="Logo Assembler Institute"
+            />
+          </div>
+          <div class="content-wrapper">
+            <div class="title">
+              <h3>Play with Assembler</h3>
+              <h4>Test your reflexes</h4>
+            </div>
+            <div class="user-content">
+              <p>
+                Choose a username: <i class="fa-solid fa-arrow-turn-down"></i>
+              </p>
+              <input type="text" class="username" />
+              <button class="start-btn">START</button>
+              <div class="ranking-button">
+                <i class="fa-solid fa-ranking-star"></i>
+              </div>
+            </div>
+          </div>
+          
+        </section>
 
-            <!-- Main page section -->
-            <section class="main-page-section">
-                <div class="main-logo"><img src="/assets/logo-assembler.jpg" alt="Logo Assembler Institute"></div>
-                <div class="content-wrapper">
-                    <div class="title">
-                        <h3>Play with Assembler</h3>
-                        <h4>Test your reflexes</h4>
-                    </div>
-                    <div class="user-content">
-                        <p>Enter your name:</p>
-                        <input type="text">
-                        <button>START</button>
-                    </div>
-                </div>
-                <div class="ranking-button">
-                    <i class="fa-solid fa-ranking-star"></i>
-                </div>
-            </section>
+        <!-- Game page section -->
+        <section class="start-game-section">
+          <div class="game-logo">
+            <img
+              src="/assets/logo-assembler.jpg"
+              alt="Logo Assembler Institute"
+            />
+          </div>
+          <div class="start-game">
+            <button>START GAME</button>
+            <div class="get-ready">Get ready...</div>
+            <button>Stop game</button>
+          </div>
+        </section>
 
-            <!-- Game page section -->
-            <section class="start-game-section">
-                <div class="game-logo"><img src="/assets/logo-assembler.jpg" alt="Logo Assembler Institute"></div>
-                <div class="start-game">
-                    <button>START GAME</button>
-                    <div class="get-ready">Get ready...</div>
-                    <button>Stop game</button>
-                </div>
-            </section>
+        <!-- Finish page section -->
+        <section class="finish-section">
+          <div class="score">
+            <h3>Your score</h3>
+            <p>Your reaction time was:</p>
+            <p><span></span>seconds 🎉</p>
+            <button>Play again</button>
+          </div>
+        </section>
 
-            <!-- Finish page section -->
-            <section class="finish-section">
-                <div class="score">
-                    <h3>Your score</h3>
-                    <p>Your reaction time was:</p>
-                    <p><span></span>seconds 🎉</p>
-                    <button>Play again</button>
-                </div>
-            </section>
-
-            <!-- Ranking -->
-            <section class="ranking">
-                <h3>User scores</h3>
-            </section>
-            
-        </div>
+        <!-- Ranking -->
+        <section class="ranking">
+          <h3>User scores</h3>
+        </section>
+      </div>
     </main>
-</body>
+  </body>
 </html>
