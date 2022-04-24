@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="styles.css" />
+  <link href="http://fonts.cdnfonts.com/css/games" rel="stylesheet">
   <script src="https://kit.fontawesome.com/42bc4784db.js" crossorigin="anonymous"></script>
   <script src="main.js"></script>
   <title>Test your reflexes</title>
@@ -27,16 +28,16 @@
               <img src="/assets/logo-assembler.jpg" alt="Logo Assembler Institute" />
             </div>
             <div class="title">
-              <h3>Play with Assembler</h3>
-              <h4>Test your reflexes</h4>
+              <h1>Play with Assembler</h1>
+              <h2>Test your reflexes</h2>
             </div>
             <div class="user-content">
               <p>
                 Choose a username: <i class="fa-solid fa-arrow-turn-down"></i>
               </p>
-              <input id="user_name" type="text" class="username" />
-              <div class="error"></div>
-              <button id="start_btn" class="general-start-btn">START</button>
+              <input id="user_name" type="text" class="username"/>
+              <div class="error">*Invalid username</div>
+              <button id="start_btn" class="game-btn">START</button>
               <div id="ranking_btn" class="ranking-button">
                 <i class="fa-solid fa-ranking-star"></i>
               </div>
@@ -48,13 +49,20 @@
 
       <!-- Game page section -->
       <section class="start-game-section">
-        <div class="game-logo">
-          <img src="/assets/logo-assembler.jpg" alt="Logo Assembler Institute" />
+        <div class="video-wrapper">
+          <video autoplay muted loop class="video">
+            <source src="/assets/background-video.mp4" type="video/mp4">
+          </video>
+        <div class="game-content-wrapper">
+          <div class="game-logo">
+            <img src="/assets/logo-assembler.jpg" alt="Logo Assembler Institute" />
+          </div>
+          <div class="start-game">
+            <button id="start_game" class="game-btn second">START GAME</button>
+            <div class="get-ready">Get ready...</div>
+            <button id="stop_btn" class="stop-btn">Stop game</button>
+          </div>
         </div>
-        <div class="start-game">
-          <button id="start_game" class="start-game-btn">START GAME</button>
-          <div class="get-ready">Get ready...</div>
-          <button id="stop_btn" class="stop-btn">Stop game</button>
         </div>
       </section>
 

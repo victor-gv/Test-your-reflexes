@@ -1,4 +1,4 @@
-* {
+body {
   font-family: "IBM Plex Sans", sans-serif;
 }
 
@@ -27,6 +27,7 @@
   animation: rotate 2.5s ease-in infinite;
 }
 
+
 .content-wrapper {
   position: absolute;
 }
@@ -41,7 +42,6 @@
 }
 
 .video-wrapper {
-  z-index: 9999;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -64,20 +64,43 @@
   width: auto;
 }
 
+.title {
+  font-family: 'Games', sans-serif;
+  letter-spacing: .3rem;
+}
+
+.title h2 {
+  color: #ff512f;
+}
+
+
 .user-content {
   display: block;
   flex-direction: column;
   justify-content: center;
-  margin-top: 10rem;
+  margin-top: 3rem;
+  font-size: 1rem;
+  letter-spacing: .2rem;
+  font-weight: bold;
+  font-family: 'Games', sans-serif;
+}
+
+.error {
+  visibility: hidden;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1rem;
+  letter-spacing: normal;
+  color: red;
+  padding-top: .5rem;
 }
 
 .username {
   width: min-content;
 }
 
-.general-start-btn {
+.game-btn {
   width: min-content;
-  margin: 1rem;
+  margin: 2.8rem auto;
   color: #151515;
   padding: .5rem 1.5rem;
   border: 3px solid;
@@ -86,10 +109,16 @@
       #ff512f) 1;
   animation: rotate-1 2.5s ease-in infinite;
   position: relative;
+  font-size: 1.4rem;
+  letter-spacing: .2rem;
+  color: #ff512f;
+  font-weight: bold;
 }
 
-.general-start-btn::before,
-.general-start-btn::after {
+
+
+.game-btn::before,
+.game-btn::after {
   content: "";
   position: absolute;
   width: 40px;
@@ -98,26 +127,28 @@
   transition: all .5s;
 }
 
-.general-start-btn::before {
+.game-btn::before {
   top: -10px;
   left: -10px;
   border-width: 3px 0 0 3px;
 }
 
-.general-start-btn::after {
+.game-btn::after {
   bottom: -10px;
   right: -10px;
   border-width: 0 3px 3px 0;
 }
 
-.general-start-btn:hover::before,
-.general-start-btn:hover::after {
+.game-btn:hover::before,
+.game-btn:hover::after {
   width: calc(100% + 16px);
   height: calc(100% + 16px);
 }
 
 .ranking-button {
   text-align: center;
+  font-size: 1.3rem;
+  color: #e3ba13;
 }
 
 
@@ -125,24 +156,44 @@
 
 .start-game-section {
   display: none;
-  border: 1px solid black;
-  border: 1px solid black;
+  position: relative;
+  flex-direction: column;
+  text-align: center;
   height: 35rem;
-  width: 17rem;
-  padding: 2rem;
+  min-width: 320px;
+  max-width: 440px;
+  background-color: #23202b;
+  color: rgba(245, 245, 245, 0.971);
+  box-shadow: 0px 0px 20px 10px #00000069;
+  border: 8px solid;
+  border-image: linear-gradient(#ff512f,
+      #dd2476,
+      #1c64ff) 1;
+  animation: rotate 2.5s ease-in infinite;
 }
+
+.game-content-wrapper {
+  position: absolute;
+}
+
 
 .game-logo {
   text-align: center;
-  margin-bottom: 1rem;
-  margin-top: 2rem;
+  margin: 1rem;
 }
 
 .game-logo img {
+  border-radius: 50%;
   height: auto;
   width: auto;
 }
 
+.second {
+  font-size: 1.1rem;
+  letter-spacing: .2rem;
+  color: #ff512f;
+  font-weight: bold;
+}
 
 
 /* FINISH SECTION */
