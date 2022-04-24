@@ -15,39 +15,34 @@
   text-align: center;
   height: 35rem;
   min-width: 320px;
-  max-width: 430px;
+  max-width: 440px;
   background-color: #151515;
   color: rgba(245, 245, 245, 0.971);
   box-shadow: 0px 0px 20px 10px #00000069;
   border: 8px solid;
-  border-image: linear-gradient(
-    #ff512f,
-    #dd2476,
-    #1c64ff) 1;
-    animation: rotate
-    2.5s
-    ease-in
-    infinite; 
+  border-image: linear-gradient(#ff512f,
+      #dd2476,
+      #1c64ff) 1;
+  animation: rotate 2.5s ease-in infinite;
 }
 
-@keyframes rotate {
-  50% {
-    border-image:
-    linear-gradient(
-      360deg,
-      #ff512f,
-      #dd2476,
-      #1c64ff
-    ) 1;
-  }
-} 
 
+.main-logo {
+  text-align: center;
+  margin: 1rem;
+}
 
+.main-logo img {
+  border-radius: 50%;
+  height: auto;
+  width: auto;
+}
 
 .user-content {
   display: block;
   flex-direction: column;
   justify-content: center;
+  margin-top: 10rem;
 }
 
 .username {
@@ -56,22 +51,49 @@
 
 .general-start-btn {
   width: min-content;
+  margin: 1rem;
+  color: #151515;
+  padding: .5rem 1.5rem;
+  border: 3px solid;
+  border-image: linear-gradient(#1c64ff,
+      #dd2476,
+      #ff512f) 1;
+  animation: rotate-1 2.5s ease-in infinite;
+  position: relative;
+}
+
+.general-start-btn::before,
+.general-start-btn::after{
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: inherit;
+  transition: all .5s;
+}
+
+.general-start-btn::before{
+  top: -10px;
+  left: -10px;
+  border-width: 3px 0 0 3px;
+}
+
+.general-start-btn::after{
+  bottom: -10px;
+  right: -10px;
+  border-width: 0 3px 3px 0;
+}
+
+.general-start-btn:hover::before,
+.general-start-btn:hover::after{
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
 }
 
 .ranking-button {
   text-align: center;
 }
 
-.main-logo {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.main-logo img {
-  border-radius: 50%;
-  height: auto;
-  width: auto;
-}
 
 /* START GAME SECTION */
 
@@ -100,4 +122,26 @@
 /* FINISH SECTION */
 .finish-section {
   display: none;
+}
+
+
+/* ANIMATION */
+@keyframes rotate {
+  50% {
+    border-image:
+      linear-gradient(360deg,
+        #ff512f,
+        #dd2476,
+        #1c64ff) 1;
+  }
+}
+
+@keyframes rotate-1 {
+  50% {
+    border-image:
+      linear-gradient(360deg,
+        #1c64ff,
+        #dd2476,
+        #ff512f) 1;
+  }
 }
