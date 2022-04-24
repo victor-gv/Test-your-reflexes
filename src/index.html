@@ -1,78 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="styles.css" />
-    <script
-      src="https://kit.fontawesome.com/42bc4784db.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="main.js"></script>
-    <title>Test your reflexes</title>
-  </head>
 
-  <body>
-    <main>
-      <div class="page-wrapper">
-        <!-- Main page section -->
-        <div class="|">
-          <section class="main-page-section">
-              <div class="main-logo">
-                <img
-                  src="/assets/logo-assembler.jpg"
-                  alt="Logo Assembler Institute"
-                />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://kit.fontawesome.com/42bc4784db.js" crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+  <title>Test your reflexes</title>
+</head>
+
+<body>
+  <main>
+    <div class="page-wrapper">
+
+      <!-- Main page section -->
+      <section class="main-page-section">
+        <div class="video-wrapper">
+          <video autoplay muted loop class="video">
+            <source src="/assets/background-video.mp4" type="video/mp4">
+          </video>
+
+          <div class="content-wrapper">
+            <div class="main-logo">
+              <img src="/assets/logo-assembler.jpg" alt="Logo Assembler Institute" />
+            </div>
+            <div class="title">
+              <h3>Play with Assembler</h3>
+              <h4>Test your reflexes</h4>
+            </div>
+            <div class="user-content">
+              <p>
+                Choose a username: <i class="fa-solid fa-arrow-turn-down"></i>
+              </p>
+              <input id="user_name" type="text" class="username" />
+              <div class="error"></div>
+              <button id="start_btn" class="general-start-btn">START</button>
+              <div id="ranking_btn" class="ranking-button">
+                <i class="fa-solid fa-ranking-star"></i>
               </div>
-              <div class="title">
-                <h3>Play with Assembler</h3>
-                <h4>Test your reflexes</h4>
-              </div>
-              <div class="user-content">
-                <p>
-                  Choose a username: <i class="fa-solid fa-arrow-turn-down"></i>
-                </p>
-                    <input id="user_name" type="text" class="username" />
-                <div class="error"></div>
-            <button id="start_btn" class="general-start-btn">START</button>
-                <div id="ranking_btn" class="ranking-button">
-                  <i class="fa-solid fa-ranking-star"></i>
-                </div>
-              </div>       
-          </section>
+            </div>
+          </div>
         </div>
+      </section>
 
-        <!-- Game page section -->
-        <section class="start-game-section">
-          <div class="game-logo">
-            <img
-              src="/assets/logo-assembler.jpg"
-              alt="Logo Assembler Institute"
-            />
-          </div>
-          <div class="start-game">
-            <button id="start_game" class="start-game-btn">START GAME</button>
-            <div class="get-ready">Get ready...</div>
-            <button id="stop_btn" class="stop-btn">Stop game</button>
-          </div>
-        </section>
 
-        <!-- Finish page section -->
-        <section class="finish-section">
-          <div class="score">
-            <h3>Your score</h3>
-            <p>Your reaction time was:</p>
-            <p class="final-score"><span></span>seconds 🎉</p>
-            <button id="replay_btn" class="play-again-btn">Play again</button>
-          </div>
-        </section>
+      <!-- Game page section -->
+      <section class="start-game-section">
+        <div class="game-logo">
+          <img src="/assets/logo-assembler.jpg" alt="Logo Assembler Institute" />
+        </div>
+        <div class="start-game">
+          <button id="start_game" class="start-game-btn">START GAME</button>
+          <div class="get-ready">Get ready...</div>
+          <button id="stop_btn" class="stop-btn">Stop game</button>
+        </div>
+      </section>
 
-        <!-- Ranking -->
-        <section class="ranking">
-          <h3>User scores</h3>
-        </section>
-      </div>
-    </main>
-  </body>
+      <!-- Finish page section -->
+      <section class="finish-section">
+        <div class="score">
+          <h3>Your score</h3>
+          <p>Your reaction time was:</p>
+          <p class="final-score"><span></span>seconds 🎉</p>
+          <button id="replay_btn" class="play-again-btn">Play again</button>
+        </div>
+      </section>
+
+      <!-- Ranking -->
+      <section class="ranking">
+        <h3>User scores</h3>
+      </section>
+    </div>
+  </main>
+</body>
+
 </html>
