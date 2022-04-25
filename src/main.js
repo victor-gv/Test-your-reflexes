@@ -15,19 +15,20 @@ const gamePage = document.getElementById("game_page");
 const errorClass = errorUser.classList;
 
 //Event listeners
-startBtn.addEventListener("click", validateUsername);
+startBtn.addEventListener("click", nextPage);
 
 
 //Functions
-function validateUsername() {
-
-    if (userName.value.trim() === "" || userName.value == null || userName.value.length < 3 || userName.value.length > 10) {
+function nextPage() {
+    //validate username
+    if (userName.value.trim() === "" || userName.value == null || userName.value.includes(" ") || userName.value.length < 3 || userName.value.length > 10) {
         let result = errorClass.toggle("error");
         if (result == true) {
-            errorUser.textContent = "*Invalid username: it must be between 3 and 10 characters.";
+            errorUser.textContent = "*Invalid username: it must be between 3 and 10 characters, no spaces and no empty.";
         } else {
             errorUser.textContent = "";
         }
+        //change page
     } else {
         errorUser.textContent = "";
         mainPage.style.display = "none";
