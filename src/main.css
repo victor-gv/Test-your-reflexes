@@ -10,7 +10,7 @@ body {
 }
 
 .main-page-section {
-  display: flex;
+  display: none;
   position: relative;
   flex-direction: column;
   text-align: center;
@@ -24,7 +24,7 @@ body {
   border-image: linear-gradient(#ff512f,
       #dd2476,
       #1c64ff) 1;
-  animation: rotate 2.5s ease-in infinite;
+  animation: rotate block 2.5s ease-in infinite;
 }
 
 
@@ -86,7 +86,6 @@ body {
 }
 
 .error {
-  visibility: hidden;
   font-family: "IBM Plex Sans", sans-serif;
   font-size: 1rem;
   letter-spacing: normal;
@@ -107,7 +106,7 @@ body {
   border-image: linear-gradient(#1c64ff,
       #dd2476,
       #ff512f) 1;
-  animation: rotate-1 2.5s ease-in infinite;
+  animation: rotate-1 2.5s ease-in infinite linear;
   position: relative;
   font-size: 1.4rem;
   letter-spacing: .2rem;
@@ -155,7 +154,8 @@ body {
 /* START GAME SECTION */
 
 .start-game-section {
-  display: none;
+  font-family: 'Games', sans-serif;
+  display: block;
   position: relative;
   flex-direction: column;
   text-align: center;
@@ -172,12 +172,16 @@ body {
   animation: rotate 2.5s ease-in infinite;
 }
 
+.start-game {
+  font-size: 1.6rem;
+  letter-spacing: .4rem;
+}
+
 .game-content-wrapper {
   position: absolute;
 }
 
-
-.game-logo {
+/* .game-logo {
   text-align: center;
   margin: 1rem;
 }
@@ -186,13 +190,24 @@ body {
   border-radius: 50%;
   height: auto;
   width: auto;
-}
+} */
 
 .second {
+  display: none;
   font-size: 1.1rem;
   letter-spacing: .2rem;
-  color: #ff512f;
+  color: #23202b;
   font-weight: bold;
+}
+
+.stop-btn {
+  display: none;
+}
+
+.get-ready {
+}
+
+.second-ranking-btn {
 }
 
 

@@ -36,7 +36,7 @@
                 Choose a username: <i class="fa-solid fa-arrow-turn-down"></i>
               </p>
               <input id="user_name" type="text" class="username"/>
-              <div class="error">*Invalid username</div>
+              <div id="error_user"></div>
               <button id="start_btn" class="game-btn">START</button>
               <div id="ranking_btn" class="ranking-button">
                 <i class="fa-solid fa-ranking-star"></i>
@@ -54,13 +54,16 @@
             <source src="/assets/background-video.mp4" type="video/mp4">
           </video>
         <div class="game-content-wrapper">
-          <div class="game-logo">
+          <!-- <div class="game-logo">
             <img src="/assets/logo-assembler.jpg" alt="Logo Assembler Institute" />
-          </div>
+          </div> -->
           <div class="start-game">
             <button id="start_game" class="game-btn second">START GAME</button>
             <div class="get-ready">Get ready...</div>
             <button id="stop_btn" class="stop-btn">Stop game</button>
+          </div>
+          <div id="ranking_btn_game" class="ranking-button second-ranking-btn">
+            <i class="fa-solid fa-ranking-star"></i>
           </div>
         </div>
         </div>
