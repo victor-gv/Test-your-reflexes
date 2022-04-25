@@ -1,4 +1,4 @@
-//Dom Elements, 
+//Dom Elements,
 const userName = document.getElementById("user_name");
 const errorUser = document.getElementById("error_user");
 const startBtn = document.getElementById("start_btn");
@@ -7,16 +7,22 @@ const startGame = document.getElementById("start_game");
 const stopBtn = document.getElementById("stop_btn");
 const replayBtn = document.getElementById("replay_btn");
 
-// Global Variables
 
+
+// Global Variables
 const errorClass = errorUser.classList;
+
+
+//Event listeners
 startBtn.addEventListener("click", validateUsername);
 
+
+//Functions
 function validateUsername() {
     if (userName.value == "") {
         let result = errorClass.toggle("error");
         if (result == true) {
-            errorUser.textContent = "Invalid username";
+            errorUser.textContent = "*Invalid username: it must be between 3 and 10 characters.";
         } else {
             errorUser.textContent = "";
         }

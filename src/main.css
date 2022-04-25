@@ -173,27 +173,26 @@ body {
   animation: rotate 2.5s ease-in infinite;
 }
 
+.game-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+}
+
 .start-game {
+  display: block;
   font-size: 1.6rem;
   letter-spacing: .4rem;
 }
 
-.game-content-wrapper {
+.second-ranking-btn {
   position: absolute;
+  width: 100%;
+  top: 16rem;
 }
 
-/* .game-logo {
-  text-align: center;
-  margin: 1rem;
-}
 
-.game-logo img {
-  border-radius: 50%;
-  height: auto;
-  width: auto;
-} */
-
-.second {
+.second-btn {
   display: none;
   font-size: 1.1rem;
   letter-spacing: .2rem;
@@ -201,15 +200,11 @@ body {
   font-weight: bold;
 }
 
-.stop-btn {
+
+.get-ready {
   display: none;
 }
 
-.get-ready {
-}
-
-.second-ranking-btn {
-}
 
 
 /* FINISH SECTION */
