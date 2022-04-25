@@ -45,6 +45,10 @@ function nextPage() {
 startGame.addEventListener("click", gameStart);
 let random = Math.random() * 10000;
 console.log(random);
+// Start and end of the timer
+let startTimer;
+let endTimer;
+
 
 function gameStart() {
     startGame.style.display = "none";
@@ -55,12 +59,25 @@ function gameStart() {
         getReady.style.display = "none";
         ufo.style.display = "block";
         gamePage.style.cursor = "crosshair";
+        // Create the start date
+        startTimer = new Date();
     }, random)
 }
 
 
-//Game function 
+//Game function
 
-function killUfo () {
-    
+ufo.addEventListener("click", stopGame);
+
+// Define the timer variable
+let timer;
+
+// Stop the game when the ufo is clicked
+function stopGame() {
+    ufo.style.display = "none";
+    // Create the end date
+    endTimer = new Date();
+    // Calculates the start and end to get the time in milliseconds
+    timer = (endTimer.getTime() - startTimer.getTime()) / 1000;
+    console.log(timer);
 }
