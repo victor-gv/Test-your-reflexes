@@ -15,14 +15,12 @@
 <body>
   <main>
     <div class="page-wrapper">
-
       <!-- Main page section -->
       <section class="main-page-section">
         <div class="video-wrapper">
           <video autoplay muted loop class="video">
             <source src="/assets/background-video.mp4" type="video/mp4">
           </video>
-
           <div class="content-wrapper">
             <div class="main-logo">
               <img src="/assets/logo-assembler.jpg" alt="Logo Assembler Institute" />
@@ -36,7 +34,7 @@
                 Choose a username: <i class="fa-solid fa-arrow-turn-down"></i>
               </p>
               <input id="user_name" type="text" class="username"/>
-              <div class="error">*Invalid username</div>
+              <div id="error_user"></div>
               <button id="start_btn" class="game-btn">START</button>
               <div id="ranking_btn" class="ranking-button">
                 <i class="fa-solid fa-ranking-star"></i>
