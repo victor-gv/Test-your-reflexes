@@ -96,7 +96,7 @@ body {
 
 .username {
   font-family: "IBM Plex Sans", sans-serif;
-  width: min-content;
+  border: 3px solid #1c64ff;
 }
 
 .game-btn {
@@ -194,16 +194,22 @@ body {
 
 
 .second-btn {
-  display: none;
+  display: block;
   font-size: 1.1rem;
   letter-spacing: .2rem;
   color: #23202b;
   font-weight: bold;
 }
 
-
 .get-ready {
   display: none;
+}
+
+
+.ufo {
+  display: none;
+  height: 2rem;
+  width: 2rem;
 }
 
 

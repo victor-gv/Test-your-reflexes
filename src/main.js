@@ -13,7 +13,6 @@ const gamePage = document.getElementById("game_page");
 
 // Global Variables
 const errorClass = errorUser.classList;
-let error = false;
 
 //Event listeners
 startBtn.addEventListener("click", validateUsername);
@@ -22,19 +21,15 @@ startBtn.addEventListener("click", validateUsername);
 //Functions
 function validateUsername() {
 
-    if (userName.value == "" || userName.value.length < 3 || userName.value.length > 10) {
+    if (userName.value.trim() === "" || userName.value == null || userName.value.length < 3 || userName.value.length > 10) {
         let result = errorClass.toggle("error");
         if (result == true) {
             errorUser.textContent = "*Invalid username: it must be between 3 and 10 characters.";
-            error = true;
         } else {
             errorUser.textContent = "";
-            error = false;
         }
     } else {
         errorUser.textContent = "";
-        error = false;
-
         mainPage.style.display = "none";
         gamePage.style.display = "block";
     }
