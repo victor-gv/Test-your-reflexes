@@ -60,7 +60,7 @@ function gameStart() {
         ufo.style.display = "block";
         gamePage.style.cursor = "crosshair";
         // Create the start date
-        startTimer = new Date();
+        startTimer = Date.now();
     }, random)
 }
 
@@ -76,8 +76,8 @@ let timer;
 function stopGame() {
     ufo.style.display = "none";
     // Create the end date
-    endTimer = new Date();
+    endTimer = Date.now();
     // Calculates the start and end to get the time in milliseconds
-    timer = (endTimer.getTime() - startTimer.getTime()) / 1000;
+    timer = (endTimer - startTimer) / 1000;
     console.log(timer);
 }
