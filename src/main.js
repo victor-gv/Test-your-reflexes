@@ -16,7 +16,6 @@ let error = false;
 //Event listeners
 startBtn.addEventListener("click", validateUsername);
 
-
 //Functions
 function validateUsername() {
 
