@@ -8,6 +8,8 @@ const stopBtn = document.getElementById("stop_btn");
 const replayBtn = document.getElementById("replay_btn");
 const mainPage = document.getElementById("main_page");
 const gamePage = document.getElementById("game_page");
+const getReady = document.getElementById("get_ready");
+const ufo = document.getElementById("stop_btn");
 
 
 
@@ -19,6 +21,8 @@ startBtn.addEventListener("click", nextPage);
 
 
 //Functions
+
+// Main page
 function nextPage() {
     //validate username
     if (userName.value.trim() === "" || userName.value == null || userName.value.includes(" ") || userName.value.length < 3 || userName.value.length > 10) {
@@ -34,4 +38,19 @@ function nextPage() {
         mainPage.style.display = "none";
         gamePage.style.display = "block";
     }
+}
+
+// Second page
+startGame.addEventListener("click", gameStart);
+let random = Math.random() * 10000;
+console.log(random);
+
+function gameStart() {
+    startGame.style.display = "none";
+    getReady.style.display = "block";
+    setTimeout(function () {
+        getReady.style.display = "none";
+        ufo.style.display = "block";
+
+    }, random)
 }

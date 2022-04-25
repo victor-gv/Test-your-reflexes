@@ -10,7 +10,7 @@ body {
 }
 
 .main-page-section {
-  display: flex;
+  display: none;
   position: relative;
   flex-direction: column;
   text-align: center;
@@ -157,7 +157,7 @@ body {
 
 .start-game-section {
   font-family: 'Games', sans-serif;
-  display: none;
+  display: flex;
   position: relative;
   flex-direction: column;
   text-align: center;
