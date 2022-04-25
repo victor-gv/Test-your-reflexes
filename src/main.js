@@ -6,30 +6,31 @@ const rankingBtn = document.getElementById("ranking_btn");
 const startGame = document.getElementById("start_game");
 const stopBtn = document.getElementById("stop_btn");
 const replayBtn = document.getElementById("replay_btn");
+const mainPage = document.getElementById("main_page");
+const gamePage = document.getElementById("game_page");
 
 
 
 // Global Variables
 const errorClass = errorUser.classList;
-let error = false;
 
 //Event listeners
-startBtn.addEventListener("click", validateUsername);
+startBtn.addEventListener("click", nextPage);
 
 //Functions
-function validateUsername() {
-
-    if (userName.value == "") {
+function nextPage() {
+    //validate username
+    if (userName.value.trim() === "" || userName.value == null || userName.value.includes(" ") || userName.value.length < 3 || userName.value.length > 10) {
         let result = errorClass.toggle("error");
         if (result == true) {
-            errorUser.textContent = "*Invalid username: it must be between 3 and 10 characters.";
-            error = true;
+            errorUser.textContent = "*Invalid username: it must be between 3 and 10 characters, no spaces and no empty.";
         } else {
             errorUser.textContent = "";
-            error = false;
         }
+        //change page
     } else {
         errorUser.textContent = "";
-        error = false;
+        mainPage.style.display = "none";
+        gamePage.style.display = "block";
     }
 }
