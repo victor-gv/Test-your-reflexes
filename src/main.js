@@ -3,6 +3,7 @@ const userName = document.getElementById("user_name");
 const errorUser = document.getElementById("error_user");
 const startBtn = document.getElementById("start_btn");
 const rankingBtn = document.getElementById("ranking_btn");
+const rankingBtnGame = document.getElementById("ranking_btn_game");
 const startGame = document.getElementById("start_game");
 const stopBtn = document.getElementById("stop_btn");
 const replayBtn = document.getElementById("replay_btn");
@@ -48,9 +49,18 @@ console.log(random);
 function gameStart() {
     startGame.style.display = "none";
     getReady.style.display = "block";
+    rankingBtnGame.style.display = "none";
+
     setTimeout(function () {
         getReady.style.display = "none";
         ufo.style.display = "block";
-
+        gamePage.style.cursor = "crosshair";
     }, random)
+}
+
+
+//Game function 
+
+function killUfo () {
+    
 }
