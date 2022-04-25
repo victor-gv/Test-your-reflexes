@@ -24,8 +24,9 @@ body {
   border-image: linear-gradient(#ff512f,
       #dd2476,
       #1c64ff) 1;
-  animation: rotate block 2.5s ease-in infinite;
+  animation: rotate 2.5s ease-in infinite;
 }
+
 
 
 .content-wrapper {
@@ -107,7 +108,7 @@ body {
   border-image: linear-gradient(#1c64ff,
       #dd2476,
       #ff512f) 1;
-  animation: rotate-1 2.5s ease-in infinite linear;
+  animation: rotate-1 2.5s ease-in infinite;
   position: relative;
   font-size: 1.4rem;
   letter-spacing: .2rem;
