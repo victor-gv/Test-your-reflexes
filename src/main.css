@@ -1,75 +1,224 @@
-* {
-    font-family: 'IBM Plex Sans', sans-serif;
+body {
+  font-family: "IBM Plex Sans", sans-serif;
 }
-
 
 /* MAIN SECTION */
-.main-page-section {
-    display: block;
-    border: 1px solid black;
-    height: 35rem;
-    width: 17rem;
-    padding: 2rem;
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 2px;
 }
+
+.main-page-section {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  text-align: center;
+  height: 35rem;
+  min-width: 320px;
+  max-width: 440px;
+  background-color: #23202b;
+  color: rgba(245, 245, 245, 0.971);
+  box-shadow: 0px 0px 20px 10px #00000069;
+  border: 8px solid;
+  border-image: linear-gradient(#ff512f,
+      #dd2476,
+      #1c64ff) 1;
+  animation: rotate 2.5s ease-in infinite;
+}
+
 
 .content-wrapper {
-    display: flex;
-    flex-direction: column;
-    border: 1px solid red;
-    height: 23rem;
-    padding: 1rem;
-    text-align: center;
+  position: absolute;
 }
 
-.title {
-    border: 1px solid green;
+
+.video {
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 
-.user-content{
-    border: 1px solid blue;
+.video-wrapper {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.ranking-button {
-    text-align: center;
-    border: 1px solid violet;
-}
 
 .main-logo {
-    text-align: center;
-    margin-bottom: 1rem;
+  text-align: center;
+  margin: 1rem;
 }
 
 .main-logo img {
-    height: auto;
-    width: auto;
+  border-radius: 50%;
+  height: auto;
+  width: auto;
 }
 
+.title {
+  font-family: 'Games', sans-serif;
+  letter-spacing: .3rem;
+}
+
+.title h2 {
+  color: #ff512f;
+}
+
+
+.user-content {
+  display: block;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 3rem;
+  font-size: 1rem;
+  letter-spacing: .2rem;
+  font-weight: bold;
+  font-family: 'Games', sans-serif;
+}
+
+.error {
+  visibility: hidden;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-size: 1rem;
+  letter-spacing: normal;
+  color: red;
+  padding-top: .5rem;
+}
+
+.username {
+  width: min-content;
+}
+
+.game-btn {
+  width: min-content;
+  margin: 2.8rem auto;
+  color: #151515;
+  padding: .5rem 1.5rem;
+  border: 3px solid;
+  border-image: linear-gradient(#1c64ff,
+      #dd2476,
+      #ff512f) 1;
+  animation: rotate-1 2.5s ease-in infinite;
+  position: relative;
+  font-size: 1.4rem;
+  letter-spacing: .2rem;
+  color: #ff512f;
+  font-weight: bold;
+}
+
+
+
+.game-btn::before,
+.game-btn::after {
+  content: "";
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: inherit;
+  transition: all .5s;
+}
+
+.game-btn::before {
+  top: -10px;
+  left: -10px;
+  border-width: 3px 0 0 3px;
+}
+
+.game-btn::after {
+  bottom: -10px;
+  right: -10px;
+  border-width: 0 3px 3px 0;
+}
+
+.game-btn:hover::before,
+.game-btn:hover::after {
+  width: calc(100% + 16px);
+  height: calc(100% + 16px);
+}
+
+.ranking-button {
+  text-align: center;
+  font-size: 1.3rem;
+  color: #e3ba13;
+}
 
 
 /* START GAME SECTION */
 
-.start-game-section{
-    display: none;
-    border: 1px solid black;
-    border: 1px solid black;
-    height: 35rem;
-    width: 17rem;
-    padding: 2rem;
+.start-game-section {
+  display: none;
+  position: relative;
+  flex-direction: column;
+  text-align: center;
+  height: 35rem;
+  min-width: 320px;
+  max-width: 440px;
+  background-color: #23202b;
+  color: rgba(245, 245, 245, 0.971);
+  box-shadow: 0px 0px 20px 10px #00000069;
+  border: 8px solid;
+  border-image: linear-gradient(#ff512f,
+      #dd2476,
+      #1c64ff) 1;
+  animation: rotate 2.5s ease-in infinite;
 }
 
+.game-content-wrapper {
+  position: absolute;
+}
+
+
 .game-logo {
-    text-align: center;
-    margin-bottom: 1rem;
-    margin-top: 2rem;
+  text-align: center;
+  margin: 1rem;
 }
 
 .game-logo img {
-    height: auto;
-    width: auto;
+  border-radius: 50%;
+  height: auto;
+  width: auto;
+}
+
+.second {
+  font-size: 1.1rem;
+  letter-spacing: .2rem;
+  color: #ff512f;
+  font-weight: bold;
 }
 
 
 /* FINISH SECTION */
 .finish-section {
-    display: none;
+  display: none;
+}
+
+
+/* ANIMATION */
+@keyframes rotate {
+  50% {
+    border-image:
+      linear-gradient(360deg,
+        #ff512f,
+        #dd2476,
+        #1c64ff) 1;
+  }
+}
+
+@keyframes rotate-1 {
+  50% {
+    border-image:
+      linear-gradient(360deg,
+        #1c64ff,
+        #dd2476,
+        #ff512f) 1;
+  }
 }
