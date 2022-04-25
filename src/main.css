@@ -157,7 +157,7 @@ body {
 
 .start-game-section {
   font-family: 'Games', sans-serif;
-  display: block;
+  display: none;
   position: relative;
   flex-direction: column;
   text-align: center;
