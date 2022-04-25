@@ -60,6 +60,7 @@ function gameStart() {
 
 //Game function 
 
+
 function killUfo () {
     
 }
