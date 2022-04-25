@@ -10,7 +10,7 @@ body {
 }
 
 .main-page-section {
-  display: none;
+  display: flex;
   position: relative;
   flex-direction: column;
   text-align: center;
@@ -94,6 +94,7 @@ body {
 }
 
 .username {
+  font-family: "IBM Plex Sans", sans-serif;
   width: min-content;
 }
 
