@@ -13,17 +13,50 @@ const getReady = document.getElementById("get_ready");
 const ufo = document.getElementById("stop_btn");
 
 
+/* //Object for jSON
+    let loginStorage = {
+        user_name: "",
+        score: ""
+    };
+    let json = JSON.stringify(loginStorage);
+ */
+
+   //Object for jSON
+/* let loginStorage = {
+    user_name: "",
+    score: ""
+};
+let json = JSON.stringify(loginStorage); */ 
+
+localStorage.setItem("highScores", []);
+
+
+
+const scoreStorage = {
+    user_name: userName.value,
+    score: ""
+};
+
+
+
+
+
+
+
+
+
+
 
 // Global Variables
 const errorClass = errorUser.classList;
 
 //Event listeners
-startBtn.addEventListener("click", nextPage);
+startBtn.addEventListener("click", loginPage);
 
 //Functions
 
 // Main page
-function nextPage() {
+function loginPage() {
     //validate username
     if (userName.value.trim() === "" || userName.value == null || userName.value.includes(" ") || userName.value.length < 3 || userName.value.length > 10) {
         let result = errorClass.toggle("error");
@@ -39,6 +72,7 @@ function nextPage() {
         gamePage.style.display = "block";
     }
 }
+
 
 // Second page
 startGame.addEventListener("click", gameStart);
@@ -66,11 +100,6 @@ function gameStart() {
 
 //Game function
 
-<<<<<<< HEAD
-
-function killUfo () {
-    
-=======
 ufo.addEventListener("click", stopGame);
 
 // Define the timer variable
@@ -84,5 +113,6 @@ function stopGame() {
     // Calculates the start and end to get the time in milliseconds
     timer = (endTimer - startTimer) / 1000;
     console.log(timer);
->>>>>>> develop
 }
+
+
