@@ -281,10 +281,25 @@ body {
 
 
 /* RANKING */
+/* .ranking {
+  display: none;
+
+} */
+
 .ranking {
   display: none;
-  position: absolute;
+  width: 30rem;
+  height: 40rem;
   font-family: 'Games', sans-serif;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Games', sans-serif;
+  letter-spacing: .3rem;
+  color: #ff512f;
+}
+
+.back-btn {
+  display: none;
 }
 
 

@@ -2,8 +2,14 @@
 const userName = document.getElementById("user_name");
 const errorUser = document.getElementById("error_user");
 const startBtn = document.getElementById("start_btn");
-const rankingBtn = document.getElementById("ranking_btn");
+const rankingMain = document.getElementById("ranking-main");
+const rankingGame = document.getElementById("ranking-game");
+const rankingBtnMain = document.getElementById("ranking_btn");
 const rankingBtnGame = document.getElementById("ranking_btn_game");
+const backBtnMain = document.getElementById("back-btn-main");
+const backBtnGame = document.getElementById("back-btn-game");
+const wrapperMain = document.getElementById("content-items");
+const startGameWrapper = document.getElementById("start-game-wrapper");
 const gameInstructions = document.getElementById("game-instructions");
 const startGame = document.getElementById("start_game");
 const stopBtn = document.getElementById("stop_btn");
@@ -101,7 +107,6 @@ function gameStart() {
 
 
 //Game function
-
 ufo.addEventListener("click", stopGame);
 
 // Define the timer variable
@@ -117,4 +122,43 @@ function stopGame() {
     console.log(timer);
 }
 
+
+
+//Ranking function
+rankingBtnMain.addEventListener("click", showRankingMain);
+rankingBtnGame.addEventListener("click", showRankingGame);
+
+function showRankingMain () {
+    wrapperMain.style.display = "none";
+    rankingMain.style.display = "flex";
+    backBtnMain.style.display = "block";
+}
+
+function showRankingGame () {
+    startGameWrapper.style.display = "none";
+    rankingGame.style.display = "flex";
+    backBtnGame.style.display = "block";
+    rankingBtnGame.style.display = "none";
+}
+
+
+
+
+//Back functions
+backBtnMain.addEventListener("click", backToMain);
+
+function backToMain () {
+    wrapperMain.style.display = "block";
+    rankingMain.style.display = "none";
+    backBtnMain.style.display = "none";
+}
+
+backBtnGame.addEventListener("click", backToGame);
+
+function backToGame () {
+    startGameWrapper.style.display = "block";
+    rankingGame.style.display = "none";
+    backBtnGame.style.display = "none";
+    rankingBtnGame.style.display = "block";
+}
 

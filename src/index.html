@@ -21,7 +21,7 @@
             <source src="/assets/background-video.mp4" type="video/mp4" />
           </video>
           <div class="content-wrapper">
-            <div class="content-items">
+            <div id="content-items" class="content-items">
               <div class="main-logo">
                 <img src="/assets/logo-assembler.jpg" alt="Logo Assembler Institute" />
               </div>
@@ -42,11 +42,12 @@
               </div>
             </div>
             <!-- Ranking -->
-            <div class="content-ranking">
-              <div class="ranking">
+         
+              <div id="ranking-main" class="ranking">
                 <h2>User scores</h2>
               </div>
-            </div>
+              <button id="back-btn-main" class="back-btn">Back</button>
+        
           </div>
         </div>
       </section>
@@ -57,7 +58,7 @@
             <source src="/assets/background-video.mp4" type="video/mp4" />
           </video>
           <div class="game-content-wrapper">
-            <div class="start-game">
+            <div id="start-game-wrapper" class="start-game">
               <button id="start_game" class="game-btn">
                 START GAME
               </button>
@@ -70,6 +71,10 @@
             <div id="ranking_btn_game" class="ranking-button second-ranking-btn">
               <i class="fa-solid fa-ranking-star"></i>
             </div>
+            <div id="ranking-game" class="ranking">
+              <h2>User scores</h2>
+            </div>
+            <button id="back-btn-game" class="back-btn">Back</button>
           </div>
         </div>
       </section>
