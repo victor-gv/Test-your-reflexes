@@ -67,11 +67,20 @@
 
       <!-- Finish page section -->
       <section class="finish-section">
-        <div class="score">
-          <h3>Your score</h3>
-          <p>Your reaction time was:</p>
-          <p class="final-score"><span></span>seconds 🎉</p>
-          <button id="replay_btn" class="play-again-btn">Play again</button>
+        <div class="video-wrapper">
+          <video autoplay muted loop class="video">
+            <source src="/assets/background-video.mp4" type="video/mp4" />
+          </video>
+          <div class="score-wrapper">
+            <div class="score">
+              <h1>Your score</h1>
+              <h3 class="final-score">Your reaction time was: <span></span> seconds 🎉</h3>
+              <button id="replay_btn" class="play-again-btn">Play again</button>
+            </div>
+            <div id="ranking_btn_finish" class="ranking-button third-ranking-btn">
+              <i class="fa-solid fa-ranking-star"></i>
+            </div>
+          </div>
         </div>
       </section>
 
