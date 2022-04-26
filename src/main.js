@@ -41,10 +41,23 @@ let json = JSON.stringify(loginStorage); */
 
 localStorage.setItem("highScores", []);
 
+
+
 const scoreStorage = {
     user_name: userName.value,
     score: ""
 };
+
+
+
+
+
+
+
+
+
+
+
 // Global Variables
 const errorClass = errorUser.classList;
 
@@ -76,10 +89,11 @@ function loginPage() {
 startGame.addEventListener("click", gameStart);
 let random = Math.random() * 10000;
 console.log(random);
-
 // Start and end of the timer
 let startTimer;
 let endTimer;
+
+
 function gameStart() {
     startGame.style.display = "none";
     getReady.style.display = "block";
@@ -98,8 +112,10 @@ function gameStart() {
 
 //Game function
 ufo.addEventListener("click", stopGame);
+
 // Define the timer variable
 let timer;
+
 // Stop the game when the ufo is clicked
 function stopGame() {
     ufo.style.display = "none";
@@ -152,6 +168,7 @@ function backToMain () {
     rankingMain.style.display = "none";
     backBtnMain.style.display = "none";
 }
+
 
 function backToGame () {
     startGameWrapper.style.display = "block";
