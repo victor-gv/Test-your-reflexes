@@ -51,13 +51,6 @@ const scoreStorage = {
 
 
 
-
-
-
-
-
-
-
 // Global Variables
 const errorClass = errorUser.classList;
 
