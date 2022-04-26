@@ -72,6 +72,7 @@ function loginPage() {
 startGame.addEventListener("click", gameStart);
 let random = Math.random() * 10000;
 console.log(random);
+
 // Start and end of the timer
 let startTimer;
 let endTimer;
@@ -141,4 +142,5 @@ function backToGame () {
     backBtnGame.style.display = "none";
     rankingBtnGame.style.display = "block";
 }
+
 
