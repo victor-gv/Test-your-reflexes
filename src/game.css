@@ -95,8 +95,9 @@ body {
 }
 
 .username {
+  width: min-content;
   font-family: "IBM Plex Sans", sans-serif;
-  border: 3px solid #1c64ff;
+  padding: .3rem;
 }
 
 .start-btn {

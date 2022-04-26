@@ -170,7 +170,9 @@ backBtnFinish.addEventListener("click", backToFinish);
 function backToMain () {
     wrapperMain.style.display = "block";
     rankingMain.style.display = "none";
+    
 }
+
 
 
 function backToGame () {
