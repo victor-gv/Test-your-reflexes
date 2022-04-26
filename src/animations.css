@@ -1,0 +1,31 @@
+/* ANIMATIONS */
+@keyframes rotate {
+    50% {
+      border-image:
+        linear-gradient(360deg,
+        #ff512f,
+        #dd2476,
+        #1c64ff
+        ) 1;
+    }
+  }
+  
+  @keyframes rotate-1 {
+    50% {
+      border-image:
+        linear-gradient(360deg,
+          #1c64ff,
+          #dd2476,
+          #ff512f) 1;
+    }
+  }
+  
+  @keyframes pulsate {
+    0% {
+      box-shadow:
+      0 0 25px #5ddcdd,
+      0 0 50px #4e00c2;
+    }
+  }
+  
+  

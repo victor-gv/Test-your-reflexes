@@ -9,4 +9,7 @@
 
 
 /* GENERAL STYLES */
-@import './main.css'
+@import './game.css';
+@import './animations.css';
+@import './responsive.css';
+

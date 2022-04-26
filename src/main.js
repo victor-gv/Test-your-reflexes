@@ -4,6 +4,7 @@ const errorUser = document.getElementById("error_user");
 const startBtn = document.getElementById("start_btn");
 const rankingBtn = document.getElementById("ranking_btn");
 const rankingBtnGame = document.getElementById("ranking_btn_game");
+const gameInstructions = document.getElementById("game-instructions");
 const startGame = document.getElementById("start_game");
 const stopBtn = document.getElementById("stop_btn");
 const replayBtn = document.getElementById("replay_btn");
@@ -86,6 +87,7 @@ let endTimer;
 function gameStart() {
     startGame.style.display = "none";
     getReady.style.display = "block";
+    gameInstructions.style.display = "none";
     rankingBtnGame.style.display = "none";
 
     setTimeout(function () {
