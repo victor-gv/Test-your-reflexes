@@ -111,16 +111,16 @@ function replay() {
 let dataScore = [{
     username: "",
     score: "",
-    }];
+}];
 
-    // Convert the array into a string and save it in the local storage
-    localStorage.setItem("playersScore", JSON.stringify(dataScore));
+// Convert the array into a string and save it in the local storage
+localStorage.setItem("playersScore", JSON.stringify(dataScore));
 
-    // Pulls the array out of the local storage
-    let datos = localStorage.getItem("playersScore");
+// Pulls the array out of the local storage
+let datos = localStorage.getItem("playersScore");
 
-    // Converts the array back to an object and displays it on console
-    console.log(JSON.parse(datos));
+// Converts the array back to an object and displays it on console
+console.log(JSON.parse(datos));
 
 
 
@@ -133,15 +133,15 @@ rankingBtnGame.addEventListener("click", showRankingGame);
 rankingBtnFinish.addEventListener("click", showRankingFinish);
 
 
-function showRankingMain () {
+function showRankingMain() {
     wrapperMain.style.display = "none";
     rankingMain.style.display = "flex";
     rankingMain.style.width = "60vw"
     backBtnMain.style.visibility = "visible";
-    
+
 }
 
-function showRankingGame () {
+function showRankingGame() {
     startGameWrapper.style.display = "none";
     rankingGame.style.display = "flex";
     rankingGame.style.width = "60vw"
@@ -149,7 +149,7 @@ function showRankingGame () {
     backBtnGame.style.visibility = "visible";
 }
 
-function showRankingFinish () {
+function showRankingFinish() {
     finishWrapper.style.display = "none";
     rankingFinish.style.display = "flex";
     rankingFinish.style.width = "60vw"
@@ -160,30 +160,45 @@ function showRankingFinish () {
 
 
 
-
 //Back functions
 backBtnMain.addEventListener("click", backToMain);
 backBtnGame.addEventListener("click", backToGame);
 backBtnFinish.addEventListener("click", backToFinish);
 
 
-function backToMain () {
+function backToMain() {
     wrapperMain.style.display = "block";
     rankingMain.style.display = "none";
-    
+    scoreHidden = true;
+    console.log(scoreHidden);
 }
 
 
-
-function backToGame () {
+function backToGame() {
     startGameWrapper.style.display = "block";
     rankingGame.style.display = "none";
     rankingBtnGame.style.display = "block";
 }
 
-function backToFinish () {
+function backToFinish() {
     finishWrapper.style.display = "block";
     rankingFinish.style.display = "none";
     rankingBtnFinish.style.display = "block";
 }
 
+
+//Viewport adapt function
+// let vw = Math.max(document.documentElement.clientWidth);
+// let scoreHidden = false;
+
+// window.addEventListener("resize", viewport);
+
+// function viewport() {
+//     if (scoreHidden && vw > 1024) {
+//         rankingMain.style.display = "flex";
+//         scoreHidden = false;
+//     } else if (vw < 1024) {
+//         console.log(scoreHidden);
+//         rankingMain.style.display = "none";
+//     }
+// }
