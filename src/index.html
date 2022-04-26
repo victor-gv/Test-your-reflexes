@@ -42,12 +42,10 @@
               </div>
             </div>
             <!-- Ranking -->
-         
-              <div id="ranking-main" class="ranking">
-                <h2>User scores</h2>
-              </div>
-              <button id="back-btn-main" class="back-btn">Back</button>
-        
+            <div id="ranking-main" class="ranking">
+              <h2>User scores</h2>
+            </div>
+            <button id="back-btn-main" class="back-btn">Back</button>
           </div>
         </div>
       </section>
@@ -59,18 +57,20 @@
           </video>
           <div class="game-content-wrapper">
             <div id="start-game-wrapper" class="start-game">
+              <p id="game-instructions">There's a ufo threatening to attack Earth... <br> go kill it</p>
               <button id="start_game" class="game-btn">
                 START GAME
               </button>
-              <p id="game-instructions">There's a ufo threatening to attack Earth... <br> go kill it</p>
               <div id="get_ready" class="get-ready">Get ready...</div>
               <div>
                 <img id="stop_btn" class="ufo" src="/assets/ufo.png" alt="ufo">
               </div>
+
+              <div id="ranking_btn_game" class="ranking-button second-ranking-btn">
+                <i class="fa-solid fa-ranking-star"></i>
+              </div>
             </div>
-            <div id="ranking_btn_game" class="ranking-button second-ranking-btn">
-              <i class="fa-solid fa-ranking-star"></i>
-            </div>
+            <!-- Ranking -->
             <div id="ranking-game" class="ranking">
               <h2>User scores</h2>
             </div>
@@ -85,15 +85,22 @@
           <video autoplay muted loop class="video">
             <source src="/assets/background-video.mp4" type="video/mp4" />
           </video>
-          <div class="score-wrapper">
-            <div class="score">
-              <h1>Your score</h1>
-              <h3 class="final-score">Your reaction time was: <span></span> seconds 🎉</h3>
-              <button id="replay_btn" class="play-again-btn">Play again</button>
+          <div class="finish-wrapper">
+            <div class="finish-content">
+              <div id="finish-wrapper" class="score">
+                <h1>Your score</h1>
+                <h3 class="final-score">Your reaction time was: <span id="user-score"></span> seconds 🎉</h3>
+                <button id="replay_btn" class="play-again-btn">Play again</button>
+              </div>
+              <div id="ranking_btn_finish" class="ranking-button third-ranking-btn">
+                <i class="fa-solid fa-ranking-star"></i>
+              </div>
             </div>
-            <div id="ranking_btn_finish" class="ranking-button third-ranking-btn">
-              <i class="fa-solid fa-ranking-star"></i>
+            <!-- Ranking -->
+            <div id="ranking-finish" class="ranking">
+              <h2>User scores</h2>
             </div>
+            <button id="back-btn-finish" class="back-btn">Back</button>
           </div>
         </div>
       </section>
