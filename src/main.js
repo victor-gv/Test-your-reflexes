@@ -94,6 +94,7 @@ function stopGame() {
     // Hide the game page and show the finish page
     gamePage.style.display = "none";
     finishSection.style.display = "block";
+    rankingFinish.style.width = "40vw"
     // Show the score
     userScore.textContent = timer;
 }
@@ -126,17 +127,6 @@ let dataScore = [{
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 //Ranking functions
 rankingBtnMain.addEventListener("click", showRankingMain);
 rankingBtnGame.addEventListener("click", showRankingGame);
@@ -146,21 +136,26 @@ rankingBtnFinish.addEventListener("click", showRankingFinish);
 function showRankingMain () {
     wrapperMain.style.display = "none";
     rankingMain.style.display = "flex";
-    backBtnMain.style.display = "block";
+    rankingMain.style.width = "60vw"
+    backBtnMain.style.visibility = "visible";
+    
 }
 
 function showRankingGame () {
     startGameWrapper.style.display = "none";
     rankingGame.style.display = "flex";
-    backBtnGame.style.display = "block";
+    rankingGame.style.width = "60vw"
     rankingBtnGame.style.display = "none";
+    backBtnGame.style.visibility = "visible";
 }
 
 function showRankingFinish () {
     finishWrapper.style.display = "none";
     rankingFinish.style.display = "flex";
-    backBtnFinish.style.display = "block";
+    rankingFinish.style.width = "60vw"
     rankingBtnFinish.style.display = "none";
+    backBtnFinish.style.visibility = "visible"
+
 }
 
 
@@ -175,21 +170,18 @@ backBtnFinish.addEventListener("click", backToFinish);
 function backToMain () {
     wrapperMain.style.display = "block";
     rankingMain.style.display = "none";
-    backBtnMain.style.display = "none";
 }
 
 
 function backToGame () {
     startGameWrapper.style.display = "block";
     rankingGame.style.display = "none";
-    backBtnGame.style.display = "none";
     rankingBtnGame.style.display = "block";
 }
 
 function backToFinish () {
     finishWrapper.style.display = "block";
     rankingFinish.style.display = "none";
-    backBtnFinish.style.display = "none";
     rankingBtnFinish.style.display = "block";
 }
 

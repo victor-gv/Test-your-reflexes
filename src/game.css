@@ -255,6 +255,12 @@ body {
   height: 100%;
 }
 
+.finish-content{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .finish-wrapper h1 {
   color: #dd2476;
 }
@@ -276,7 +282,7 @@ body {
 .third-ranking-btn {
   position: absolute;
   width: 100%;
-  top: 32rem;
+  top: 46rem;
 }
 
 
@@ -290,7 +296,6 @@ body {
   font-family: 'Games', sans-serif;
   letter-spacing: .3rem;
   min-width: 320px;
-  width: 60vw;
   height: 620px;
   color: #ffffffbf;
   border: 8px solid;
@@ -300,16 +305,19 @@ body {
   animation: rotate-3 2.5s ease-in infinite;
 }
 
+
 .ranking-wrapper {
   display: grid;
   grid-template-rows: 570px;
 }
 
 .back-btn {
-  display: none;
+  visibility: hidden;
   font-size: 1.8rem;
   color: #ff512f;
 }
+
+
 
 
 
