@@ -110,7 +110,6 @@ function stopGame() {
 //Ranking function
 rankingBtnMain.addEventListener("click", showRankingMain);
 rankingBtnGame.addEventListener("click", showRankingGame);
-console.log(showRankingMain);
 function showRankingMain () {
     wrapperMain.style.display = "none";
     rankingMain.style.display = "flex";
