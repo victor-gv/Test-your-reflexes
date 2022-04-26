@@ -281,25 +281,34 @@ body {
 
 
 /* RANKING */
-/* .ranking {
-  display: none;
-
-} */
 
 .ranking {
   display: none;
-  width: 30rem;
-  height: 40rem;
   font-family: 'Games', sans-serif;
   flex-direction: column;
   align-items: center;
   font-family: 'Games', sans-serif;
   letter-spacing: .3rem;
-  color: #ff512f;
+  min-width: 320px;
+  width: 60vw;
+  height: 620px;
+  color: #ffffffbf;
+  border: 8px solid;
+  border-image: linear-gradient(#ffffffbf,
+  #403f3f,
+  #776e6e) 1;
+  animation: rotate-3 2.5s ease-in infinite;
+}
+
+.ranking-wrapper {
+  display: grid;
+  grid-template-rows: 570px;
 }
 
 .back-btn {
   display: none;
+  font-size: 1.8rem;
+  color: #ff512f;
 }
 
 
