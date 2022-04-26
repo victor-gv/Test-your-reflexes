@@ -22,41 +22,8 @@ const mainPage = document.getElementById("main_page");
 const gamePage = document.getElementById("game_page");
 const getReady = document.getElementById("get_ready");
 const ufo = document.getElementById("stop_btn");
-
-
-/* //Object for jSON
-    let loginStorage = {
-        user_name: "",
-        score: ""
-    };
-    let json = JSON.stringify(loginStorage);
- */
-
-   //Object for jSON
-/* let loginStorage = {
-    user_name: "",
-    score: ""
-};
-let json = JSON.stringify(loginStorage); */ 
-
-localStorage.setItem("highScores", []);
-
-
-
-const scoreStorage = {
-    user_name: userName.value,
-    score: ""
-};
-
-
-
-
-
-
-
-
-
-
+const finishSection = document.getElementById("finish_section");
+const userScore = document.getElementById("user_score");
 
 // Global Variables
 const errorClass = errorUser.classList;
@@ -124,7 +91,49 @@ function stopGame() {
     // Calculates the start and end to get the time in milliseconds
     timer = (endTimer - startTimer) / 1000;
     console.log(timer);
+    // Hide the game page and show the finish page
+    gamePage.style.display = "none";
+    finishSection.style.display = "block";
+    // Show the score
+    userScore.textContent = timer;
 }
+
+replayBtn.addEventListener("click", replay);
+
+// Hide the finish page and show the main page
+function replay() {
+    finishSection.style.display = "none";
+    mainPage.style.display = "block";
+}
+
+// Create an array
+let dataScore = [{
+    username: "",
+    score: "",
+    }];
+
+    // Convert the array into a string and save it in the local storage
+    localStorage.setItem("playersScore", JSON.stringify(dataScore));
+
+    // Pulls the array out of the local storage
+    let datos = localStorage.getItem("playersScore");
+
+    // Converts the array back to an object and displays it on console
+    console.log(JSON.parse(datos));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
