@@ -19,6 +19,17 @@
           #ff512f) 1;
     }
   }
+
+  @keyframes rotate-3 {
+    50% {
+      border-image:
+        linear-gradient(360deg,
+        #ffffffbf,
+        #403f3f,
+        #776e6e) 1;
+    }
+  }
+  
   
   @keyframes pulsate {
     0% {
