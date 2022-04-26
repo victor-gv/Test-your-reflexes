@@ -4,12 +4,16 @@ const errorUser = document.getElementById("error_user");
 const startBtn = document.getElementById("start_btn");
 const rankingMain = document.getElementById("ranking-main");
 const rankingGame = document.getElementById("ranking-game");
+const rankingFinish = document.getElementById("ranking-finish");
 const rankingBtnMain = document.getElementById("ranking_btn");
 const rankingBtnGame = document.getElementById("ranking_btn_game");
+const rankingBtnFinish = document.getElementById("ranking_btn_finish");
 const backBtnMain = document.getElementById("back-btn-main");
 const backBtnGame = document.getElementById("back-btn-game");
+const backBtnFinish = document.getElementById("back-btn-finish");
 const wrapperMain = document.getElementById("content-items");
 const startGameWrapper = document.getElementById("start-game-wrapper");
+const finishWrapper = document.getElementById("finish-wrapper")
 const gameInstructions = document.getElementById("game-instructions");
 const startGame = document.getElementById("start_game");
 const stopBtn = document.getElementById("stop_btn");
@@ -108,9 +112,15 @@ function stopGame() {
 
 
 
-//Ranking function
+//Ranking functions
 rankingBtnMain.addEventListener("click", showRankingMain);
 rankingBtnGame.addEventListener("click", showRankingGame);
+<<<<<<< HEAD
+=======
+rankingBtnFinish.addEventListener("click", showRankingFinish);
+
+
+>>>>>>> d416c64e7786da5b4e92572416547314acdbc007
 function showRankingMain () {
     wrapperMain.style.display = "none";
     rankingMain.style.display = "flex";
@@ -124,18 +134,36 @@ function showRankingGame () {
     rankingBtnGame.style.display = "none";
 }
 
+function showRankingFinish () {
+    finishWrapper.style.display = "none";
+    rankingFinish.style.display = "flex";
+    backBtnFinish.style.display = "block";
+    rankingBtnFinish.style.display = "none";
+}
+
 
 
 
 //Back functions
 backBtnMain.addEventListener("click", backToMain);
+<<<<<<< HEAD
+=======
+backBtnGame.addEventListener("click", backToGame);
+backBtnFinish.addEventListener("click", backToFinish);
+
+
+>>>>>>> d416c64e7786da5b4e92572416547314acdbc007
 function backToMain () {
     wrapperMain.style.display = "block";
     rankingMain.style.display = "none";
     backBtnMain.style.display = "none";
 }
 
+<<<<<<< HEAD
 backBtnGame.addEventListener("click", backToGame);
+=======
+
+>>>>>>> d416c64e7786da5b4e92572416547314acdbc007
 function backToGame () {
     startGameWrapper.style.display = "block";
     rankingGame.style.display = "none";
@@ -143,4 +171,13 @@ function backToGame () {
     rankingBtnGame.style.display = "block";
 }
 
+<<<<<<< HEAD
+=======
+function backToFinish () {
+    finishWrapper.style.display = "block";
+    rankingFinish.style.display = "none";
+    backBtnFinish.style.display = "none";
+    rankingBtnFinish.style.display = "block";
+}
+>>>>>>> d416c64e7786da5b4e92572416547314acdbc007
 

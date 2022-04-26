@@ -246,7 +246,7 @@ body {
   animation: rotate 2.5s ease-in infinite;
 }
 
-.score-wrapper {
+.finish-wrapper {
   display: flex;
   position: absolute;
   flex-direction: column;
@@ -255,11 +255,11 @@ body {
   height: 100%;
 }
 
-.score-wrapper h1 {
+.finish-wrapper h1 {
   color: #dd2476;
 }
 
-.score-wrapper h3 {
+.finish-wrapper h3 {
   font-size: 1.2rem;
   letter-spacing: .4rem;
   font-weight: normal;
