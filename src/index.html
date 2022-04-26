@@ -21,22 +21,30 @@
             <source src="/assets/background-video.mp4" type="video/mp4" />
           </video>
           <div class="content-wrapper">
-            <div class="main-logo">
-              <img src="/assets/logo-assembler.jpg" alt="Logo Assembler Institute" />
+            <div class="content-items">
+              <div class="main-logo">
+                <img src="/assets/logo-assembler.jpg" alt="Logo Assembler Institute" />
+              </div>
+              <div class="title">
+                <h1>Play with Assembler</h1>
+                <h2>Test your reflexes</h2>
+              </div>
+              <div class="user-content">
+                <p>
+                  Choose a username: <i class="fa-solid fa-arrow-turn-down"></i>
+                </p>
+                <input id="user_name" type="text" class="username" />
+                <div id="error_user"></div>
+                <button id="start_btn" class="start-btn">START</button>
+                <div id="ranking_btn" class="ranking-button">
+                  <i class="fa-solid fa-ranking-star"></i>
+                </div>
+              </div>
             </div>
-            <div class="title">
-              <h1>Play with Assembler</h1>
-              <h2>Test your reflexes</h2>
-            </div>
-            <div class="user-content">
-              <p>
-                Choose a username: <i class="fa-solid fa-arrow-turn-down"></i>
-              </p>
-              <input id="user_name" type="text" class="username" />
-              <div id="error_user"></div>
-              <button id="start_btn" class="game-btn">START</button>
-              <div id="ranking_btn" class="ranking-button">
-                <i class="fa-solid fa-ranking-star"></i>
+            <!-- Ranking -->
+            <div class="content-ranking">
+              <div class="ranking">
+                <h2>User scores</h2>
               </div>
             </div>
           </div>
@@ -51,9 +59,10 @@
           </video>
           <div class="game-content-wrapper">
             <div class="start-game">
-              <button id="start_game" class="game-btn second-btn">
+              <button id="start_game" class="game-btn">
                 START GAME
               </button>
+              <p id="game-instructions">There's a ufo threatening to attack Earth... <br> go kill it</p>
               <div id="get_ready" class="get-ready">Get ready...</div>
               <div>
                 <img id="stop_btn" class="ufo" src="/assets/ufo.png" alt="ufo">
@@ -83,11 +92,6 @@
             </div>
           </div>
         </div>
-      </section>
-
-      <!-- Ranking -->
-      <section class="ranking">
-        <h3>User scores</h3>
       </section>
     </div>
   </main>
