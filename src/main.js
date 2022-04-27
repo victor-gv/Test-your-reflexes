@@ -25,6 +25,8 @@ const ufo = document.getElementById("stop_btn");
 const finishSection = document.getElementById("finish_section");
 const userScore = document.getElementById("user_score");
 
+
+
 // Global Variables
 const errorClass = errorUser.classList;
     // Second page
@@ -55,6 +57,11 @@ backBtnFinish.addEventListener("click", backToFinish);
 
 
 
+// Create an array of objects to store the username and its score
+let dataScore = [];
+
+
+
 
 //Functions
 // Main page
@@ -69,6 +76,7 @@ function loginPage() {
         }
         //change page
     } else {
+        //Store the username 
         errorUser.textContent = "";
         mainPage.style.display = "none";
         gamePage.style.display = "block";
@@ -101,13 +109,24 @@ function stopGame() {
     endTimer = Date.now();
     // Calculates the start and end to get the time in milliseconds
     timer = (endTimer - startTimer) / 1000;
-    console.log(timer);
     // Hide the game page and show the finish page
     gamePage.style.display = "none";
     finishSection.style.display = "block";
     rankingFinish.style.width = "40vw"
     // Show the score
     userScore.textContent = timer;
+
+    //When the game is finished, store the username and its score in the dataScore array of the local storage. If there is already an object, create a new one inside the array.
+    // dataScore = JSON.parse(localStorage.getItem("dataScore"));
+    if (dataScore == null) {
+        dataScore = [];
+    }
+    dataScore.push({
+        name: userName.value,
+        score: timer
+    });
+    localStorage.setItem("dataScore", JSON.stringify(dataScore));
+    console.log(dataScore);
 }
 
 
@@ -148,8 +167,6 @@ function showRankingFinish() {
 function backToMain() {
     wrapperMain.style.display = "block";
     rankingMain.style.display = "none";
-    scoreHidden = true;
-    console.log(scoreHidden);
 }
 
 function backToGame() {
@@ -163,30 +180,6 @@ function backToFinish() {
     rankingFinish.style.display = "none";
     rankingBtnFinish.style.display = "block";
 }
-
-
-
-
-
-
-
-// Create an array
-let dataScore = [{
-    username: "",
-    score: "",
-}];
-
-// Convert the array into a string and save it in the local storage
-localStorage.setItem("playersScore", JSON.stringify(dataScore));
-
-// Pulls the array out of the local storage
-let datos = localStorage.getItem("playersScore");
-
-// Converts the array back to an object and displays it on console
-console.log(JSON.parse(datos));
-
-
-
 
 
 
