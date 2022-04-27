@@ -27,12 +27,36 @@ const userScore = document.getElementById("user_score");
 
 // Global Variables
 const errorClass = errorUser.classList;
+    // Second page
+let random = Math.random() * 10000;
+    // Start and end of the timer
+let startTimer;
+let endTimer;
+    // Define the timer variable
+let timer;
+
+
+
+
 
 //Event listeners
 startBtn.addEventListener("click", loginPage);
+startGame.addEventListener("click", gameStart);
+ufo.addEventListener("click", stopGame);
+replayBtn.addEventListener("click", replay);
+    //Ranking functions
+rankingBtnMain.addEventListener("click", showRankingMain);
+rankingBtnGame.addEventListener("click", showRankingGame);
+rankingBtnFinish.addEventListener("click", showRankingFinish);
+    //Back functions
+backBtnMain.addEventListener("click", backToMain);
+backBtnGame.addEventListener("click", backToGame);
+backBtnFinish.addEventListener("click", backToFinish);
+
+
+
 
 //Functions
-
 // Main page
 function loginPage() {
     //validate username
@@ -48,17 +72,9 @@ function loginPage() {
         errorUser.textContent = "";
         mainPage.style.display = "none";
         gamePage.style.display = "block";
+        startGame.style.display = "inline-block";
     }
 }
-
-
-// Second page
-startGame.addEventListener("click", gameStart);
-let random = Math.random() * 10000;
-console.log(random);
-// Start and end of the timer
-let startTimer;
-let endTimer;
 
 
 function gameStart() {
@@ -78,11 +94,6 @@ function gameStart() {
 
 
 //Game function
-ufo.addEventListener("click", stopGame);
-
-// Define the timer variable
-let timer;
-
 // Stop the game when the ufo is clicked
 function stopGame() {
     ufo.style.display = "none";
@@ -99,38 +110,16 @@ function stopGame() {
     userScore.textContent = timer;
 }
 
-replayBtn.addEventListener("click", replay);
 
 // Hide the finish page and show the main page
 function replay() {
     finishSection.style.display = "none";
-    mainPage.style.display = "block";
+    mainPage.style.display = "flex";
+    userName.value = "";
 }
 
-// Create an array
-let dataScore = [{
-    username: "",
-    score: "",
-}];
 
-// Convert the array into a string and save it in the local storage
-localStorage.setItem("playersScore", JSON.stringify(dataScore));
-
-// Pulls the array out of the local storage
-let datos = localStorage.getItem("playersScore");
-
-// Converts the array back to an object and displays it on console
-console.log(JSON.parse(datos));
-
-
-
-
-//Ranking functions
-rankingBtnMain.addEventListener("click", showRankingMain);
-rankingBtnGame.addEventListener("click", showRankingGame);
-rankingBtnFinish.addEventListener("click", showRankingFinish);
-
-
+// Show the ranking page when the button is clicked
 function showRankingMain() {
     wrapperMain.style.display = "none";
     rankingMain.style.display = "flex";
@@ -156,21 +145,12 @@ function showRankingFinish() {
 
 }
 
-
-
-//Back functions
-backBtnMain.addEventListener("click", backToMain);
-backBtnGame.addEventListener("click", backToGame);
-backBtnFinish.addEventListener("click", backToFinish);
-
-
 function backToMain() {
     wrapperMain.style.display = "block";
     rankingMain.style.display = "none";
     scoreHidden = true;
     console.log(scoreHidden);
 }
-
 
 function backToGame() {
     startGameWrapper.style.display = "block";
@@ -183,6 +163,34 @@ function backToFinish() {
     rankingFinish.style.display = "none";
     rankingBtnFinish.style.display = "block";
 }
+
+
+
+
+
+
+
+// Create an array
+let dataScore = [{
+    username: "",
+    score: "",
+}];
+
+// Convert the array into a string and save it in the local storage
+localStorage.setItem("playersScore", JSON.stringify(dataScore));
+
+// Pulls the array out of the local storage
+let datos = localStorage.getItem("playersScore");
+
+// Converts the array back to an object and displays it on console
+console.log(JSON.parse(datos));
+
+
+
+
+
+
+
 
 
 //Viewport adapt function
