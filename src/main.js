@@ -125,8 +125,6 @@ console.log(JSON.parse(datos));
 
 
 
-
-
 //Ranking functions
 rankingBtnMain.addEventListener("click", showRankingMain);
 rankingBtnGame.addEventListener("click", showRankingGame);
