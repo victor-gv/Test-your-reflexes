@@ -5,6 +5,9 @@ const startBtn = document.getElementById("start_btn");
 const rankingMain = document.getElementById("ranking-main");
 const rankingGame = document.getElementById("ranking-game");
 const rankingFinish = document.getElementById("ranking-finish");
+const displayRankingMain = document.getElementById("display-ranking-main");
+const displayRankingGame = document.getElementById("display-ranking-game");
+
 const displayRankingFinish = document.getElementById("display-ranking-finish");
 const rankingBtnMain = document.getElementById("ranking_btn");
 const rankingBtnGame = document.getElementById("ranking_btn_game");
@@ -134,14 +137,29 @@ function stopGame() {
     data = JSON.parse(localStorage.getItem("dataScore"));
 
 
-    //Display the data in the displayRankingFinish div, creating a p element for each object in the array, overwriting the previous p elements to display the new data.
+    //Display the data in the displayRankingMain, displayRankingFinish and displayRankingFinish div, creating a p element for each object in the array, overwriting the previous p elements to display the new data.
+    displayRankingMain.innerHTML = "";
+    displayRankingGame.innerHTML = "";
     displayRankingFinish.innerHTML = "";
     for (let i = 0; i < data.length; i++) {
         let p = document.createElement("p");
-        p.textContent = `${data[i].name} - ${data[i].score} seconds`;
+        p.textContent = data[i].name + ": " + data[i].score + " seconds";
+        displayRankingMain.appendChild(p);
+    }
+    for (let i = 0; i < data.length; i++) {
+        let p = document.createElement("p");
+        p.textContent = data[i].name + ": " + data[i].score + " seconds";
+        displayRankingGame.appendChild(p);
+    }
+    for (let i = 0; i < data.length; i++) {
+        let p = document.createElement("p");
+        p.textContent = data[i].name + ": " + data[i].score + " seconds";
         displayRankingFinish.appendChild(p);
     }
 }
+
+
+
 
 
 // Hide the finish page and show the main page

@@ -46,83 +46,87 @@
               <div class="ranking-wrapper">
                 <div class="ranking-content">
                   <h2>User scores</h2>
+                  <div id="display-ranking-main"></div>
                 </div>
-                <div class="ranking-back">
-                  <i id="back-btn-main" class="fa-solid fa-arrow-left back-btn"></i>
-                </div>
+              </div>
+              <div class="ranking-back">
+                <i id="back-btn-main" class="fa-solid fa-arrow-left back-btn"></i>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <!-- Game page section -->
-      <section id="game_page" class="start-game-section">
-        <div class="video-wrapper">
-          <video autoplay muted loop class="video">
-            <source src="/assets/background-video.mp4" type="video/mp4" />
-          </video>
-          <div class="game-content-wrapper">
-            <div id="start-game-wrapper" class="start-game">
-              <p id="game-instructions">There's a ufo threatening to attack Earth... <br> go kill it</p>
-              <button id="start_game" class="game-btn">
-                START GAME
-              </button>
-              <div id="get_ready" class="get-ready">Get ready...</div>
-              <div>
-                <img id="stop_btn" class="ufo" src="/assets/ufo.png" alt="ufo">
-              </div>
+    </div>
+    </section>
+    <!-- Game page section -->
+    <section id="game_page" class="start-game-section">
+      <div class="video-wrapper">
+        <video autoplay muted loop class="video">
+          <source src="/assets/background-video.mp4" type="video/mp4" />
+        </video>
+        <div class="game-content-wrapper">
+          <div id="start-game-wrapper" class="start-game">
+            <p id="game-instructions">There's a ufo threatening to attack Earth... <br> go kill it</p>
+            <button id="start_game" class="game-btn">
+              START GAME
+            </button>
+            <div id="get_ready" class="get-ready">Get ready...</div>
+            <div>
+              <img id="stop_btn" class="ufo" src="/assets/ufo.png" alt="ufo">
+            </div>
 
-              <div id="ranking_btn_game" class="ranking-button second-ranking-btn">
-                <i class="fa-solid fa-ranking-star"></i>
+            <div id="ranking_btn_game" class="ranking-button second-ranking-btn">
+              <i class="fa-solid fa-ranking-star"></i>
+            </div>
+          </div>
+          <!-- Ranking -->
+          <div id="ranking-game" class="ranking">
+            <div class="ranking-wrapper">
+              <div id="ranking-content-game" class="ranking-content">
+                <h2>User scores</h2>
+                <div id="display-ranking-game"></div>
               </div>
             </div>
-            <!-- Ranking -->
-            <div id="ranking-game" class="ranking">
-              <div class="ranking-wrapper">
-                <div class="ranking-content">
-                  <h2>User scores</h2>
-                </div>
-                <div class="ranking-back">
-                  <i id="back-btn-game" class="fa-solid fa-arrow-left back-btn"></i>
-                </div>
-              </div>
+            <div class="ranking-back">
+              <i id="back-btn-game" class="fa-solid fa-arrow-left back-btn"></i>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+      </div>
+    </section>
 
-      <!-- Finish page section -->
-      <section id="finish_section" class="finish-section">
-        <div class="video-wrapper">
-          <video autoplay muted loop class="video">
-            <source src="/assets/background-video.mp4" type="video/mp4" />
-          </video>
-          <div class="finish-wrapper">
-            <div class="finish-content">
-              <div id="finish-wrapper" class="score">
-                <h1>Your score</h1>
-                <h3 class="final-score">Your reaction time was: <span id="user_score"></span> seconds 🎉</h3>
-                <button id="replay_btn" class="play-again-btn">Play again</button>
-              </div>
-              <div id="ranking_btn_finish" class="ranking-button third-ranking-btn">
-                <i class="fa-solid fa-ranking-star"></i>
-              </div>
+    <!-- Finish page section -->
+    <section id="finish_section" class="finish-section">
+      <div class="video-wrapper">
+        <video autoplay muted loop class="video">
+          <source src="/assets/background-video.mp4" type="video/mp4" />
+        </video>
+        <div class="finish-wrapper">
+          <div class="finish-content">
+            <div id="finish-wrapper" class="score">
+              <h1>Your score</h1>
+              <h3 class="final-score">Your reaction time was: <span id="user_score"></span> seconds 🎉</h3>
+              <button id="replay_btn" class="play-again-btn">Play again</button>
             </div>
-            <!-- Ranking -->
-            <div id="ranking-finish" class="ranking">
-              <div class="ranking-wrapper">
-                <div class="ranking-content">
-                  <h2>User scores</h2>
-                  <div id="display-ranking-finish"></div>
-                </div>
-                <div class="ranking-back">
-                  <i id="back-btn-finish" class="fa-solid fa-arrow-left back-btn"></i>
-                </div>
+            <div id="ranking_btn_finish" class="ranking-button third-ranking-btn">
+              <i class="fa-solid fa-ranking-star"></i>
+            </div>
+          </div>
+          <!-- Ranking -->
+          <div id="ranking-finish" class="ranking">
+            <div class="ranking-wrapper">
+              <div class="ranking-content">
+                <h2>User scores</h2>
+                <div id="display-ranking-finish"></div>
+              </div>
+              <div class="ranking-back">
+                <i id="back-btn-finish" class="fa-solid fa-arrow-left back-btn"></i>
               </div>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
     </div>
   </main>
   <script src="main.js"></script>
