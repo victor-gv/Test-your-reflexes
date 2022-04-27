@@ -99,6 +99,7 @@ function gameStart() {
     setTimeout(function () {
         getReady.style.display = "none";
         ufo.style.display = "block";
+        startGameWrapper.style.border = "none";
         gamePage.style.cursor = "crosshair";
         // Create the start date
         startTimer = Date.now();
