@@ -20,6 +20,7 @@ const startGameWrapper = document.getElementById("start-game-wrapper");
 const finishWrapper = document.getElementById("finish-wrapper")
 const gameInstructions = document.getElementById("game-instructions");
 const startGame = document.getElementById("start_game");
+const gameContentWrapper = document.getElementById("game-content-wrapper");
 const stopBtn = document.getElementById("stop_btn");
 const replayBtn = document.getElementById("replay_btn");
 const mainPage = document.getElementById("main_page");
@@ -41,6 +42,9 @@ let endTimer;
 // Define the timer variable
 let timer;
 let data;
+let ufoDisplayed = false;
+// Create an array of objects to store the username and its score
+let dataScore = [];
 
 
 
@@ -59,11 +63,6 @@ rankingBtnFinish.addEventListener("click", showRankingFinish);
 backBtnMain.addEventListener("click", backToMain);
 backBtnGame.addEventListener("click", backToGame);
 backBtnFinish.addEventListener("click", backToFinish);
-
-
-
-// Create an array of objects to store the username and its score
-let dataScore = [];
 
 
 
@@ -96,17 +95,20 @@ function gameStart() {
     rankingBtnGame.style.display = "none";
 
     setTimeout(function () {
+        // Display the spaceship randomly on the screen
         stopBtn.style.top = Math.floor((Math.random() * 90) + 1) + "%";
         stopBtn.style.left = Math.floor((Math.random() * 90) + 1) + "%";
         getReady.style.display = "none";
         ufo.style.display = "block";
+        ufoDisplayed = true;
         startGameWrapper.style.border = "none";
         startGameWrapper.style.padding = "0";
         gamePage.style.cursor = "crosshair";
         // Create the start date
         startTimer = Date.now();
-    }, 1)
+    }, random)
 }
+
 
 
 //Game function
@@ -120,9 +122,11 @@ function stopGame() {
     // Hide the game page and show the finish page
     gamePage.style.display = "none";
     finishSection.style.display = "block";
-    rankingFinish.style.width = "40vw"
+    rankingFinish.style.width = "30vw"
     // Show the score
     userScore.textContent = timer;
+    ufoDisplayed = false;
+
 
     //When the game is finished, store the username and its score in the dataScore array of the local storage. If there is already an object, create a new one inside the array.
     // dataScore = JSON.parse(localStorage.getItem("dataScore"));
@@ -146,23 +150,36 @@ function stopGame() {
     displayRankingFinish.innerHTML = "";
     for (let i = 0; i < data.length; i++) {
         let p = document.createElement("p");
-        p.textContent = data[i].name + ": " + data[i].score + " seconds";
+        p.textContent = "🚀" + data[i].name + ": " + data[i].score + " seconds";
         displayRankingMain.appendChild(p);
+        deleteLastElement()
     }
     for (let i = 0; i < data.length; i++) {
         let p = document.createElement("p");
-        p.textContent = data[i].name + ": " + data[i].score + " seconds";
+        p.textContent = "🚀" + data[i].name + ": " + data[i].score + " seconds";
         displayRankingGame.appendChild(p);
+        deleteLastElement()
     }
     for (let i = 0; i < data.length; i++) {
         let p = document.createElement("p");
-        p.textContent = data[i].name + ": " + data[i].score + " seconds";
+        p.textContent = "🚀" + data[i].name + ": " + data[i].score + " seconds";
         displayRankingFinish.appendChild(p);
+        deleteLastElement()
     }
 }
 
-
-
+//If the ranking has more than 12 elements, delete the first one to let the new one to be displayed
+function deleteLastElement() {
+    if (displayRankingMain.childElementCount > 12) {
+        displayRankingMain.removeChild(displayRankingMain.firstChild);
+    }
+    if (displayRankingGame.childElementCount > 12) {
+        displayRankingGame.removeChild(displayRankingGame.firstChild);
+    }
+    if (displayRankingFinish.childElementCount > 12) {
+        displayRankingFinish.removeChild(displayRankingFinish.firstChild);
+    }
+}
 
 
 // Hide the finish page and show the main page
@@ -217,23 +234,3 @@ function backToFinish() {
     rankingBtnFinish.style.display = "block";
 }
 
-
-
-
-
-
-//Viewport adapt function
-// let vw = Math.max(document.documentElement.clientWidth);
-// let scoreHidden = false;
-
-// window.addEventListener("resize", viewport);
-
-// function viewport() {
-//     if (scoreHidden && vw > 1024) {
-//         rankingMain.style.display = "flex";
-//         scoreHidden = false;
-//     } else if (vw < 1024) {
-//         console.log(scoreHidden);
-//         rankingMain.style.display = "none";
-//     }
-// }

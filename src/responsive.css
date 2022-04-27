@@ -18,6 +18,24 @@
     max-width: 440px;
     height: calc(100vh - 1.5rem);
   }
+
+  .start-game {
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+    min-width: 320px;
+    padding: 160px 20px 0px 20px;
+    border: 8px solid;
+    border-image: linear-gradient(#ff512f,
+        #dd2476,
+        #1c64ff) 1;
+    animation: rotate 2.5s ease-in infinite;
+  }
+  
+  .ufo {
+    position: absolute;
+  }
+  
 }
 
 
@@ -39,6 +57,18 @@
     min-width: 441px;
     max-width: 768px;
     height: calc(100vh - 1.5rem);
+  }
+
+  .start-game {
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+    min-width: 441px;
+    padding: 160px 20px 0px 20px;
+  }
+  
+  .ufo {
+    position: absolute;
   }
 }
 
@@ -62,6 +92,24 @@
     min-width: 768px;
     max-width: 1024px;
     height: calc(100vh - 1.5rem);
+  }
+
+  .game-content-wrapper {
+    display: flex;
+    flex-direction: row;
+
+  }
+
+  .start-game {
+    position: relative;
+    width: 90vw;
+    height: 90vh;
+    min-width: 40rem;
+    padding: 160px 20px 0px 20px;
+  }
+  
+  .ufo {
+    position: absolute;
   }
 }
 
@@ -97,11 +145,6 @@
     min-width: 40rem;
     margin-right: 3rem;
     padding: 160px 20px 0px 20px;
-    border: 8px solid;
-    border-image: linear-gradient(#ff512f,
-        #dd2476,
-        #1c64ff) 1;
-    animation: rotate 2.5s ease-in infinite;
   }
 
   .finish-wrapper {
@@ -117,9 +160,6 @@
     height: 100%;
   }
 
-  .ranking-button {
-    display: none;
-  }
 
 
   .content-wrapper {
@@ -148,14 +188,16 @@
     flex-direction: column;
     height: 620px;
     align-items: center;
-    font-family: 'Games', sans-serif;
     letter-spacing: .3rem;
-    color: #ffffffbf;
     border: 8px solid;
     border-image: linear-gradient(#ffffffbf,
         #403f3f,
         #776e6e) 1;
     animation: rotate-3 2.5s ease-in infinite;
+  }
+
+  .ranking-button {
+    display: none;
   }
 
 
@@ -200,11 +242,6 @@
     min-width: 45rem;
     margin-right: 3rem;
     padding: 160px 20px 0px 20px;
-    border: 8px solid;
-    border-image: linear-gradient(#ff512f,
-        #dd2476,
-        #1c64ff) 1;
-    animation: rotate 2.5s ease-in infinite;
   }
 
   .ufo {
@@ -261,9 +298,7 @@
     flex-direction: column;
     height: 620px;
     align-items: center;
-    font-family: 'Games', sans-serif;
     letter-spacing: .3rem;
-    color: #ffffffbf;
     border: 8px solid;
     border-image: linear-gradient(#ffffffbf,
         #403f3f,
