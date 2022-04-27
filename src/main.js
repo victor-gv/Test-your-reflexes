@@ -43,6 +43,9 @@ let timer;
 let data;
 // Create an array of objects to store the username and its score
 let dataScore = [];
+//Timeout variables
+let timeOut;
+let interval;
 
 
 
@@ -93,13 +96,12 @@ function gameStart() {
     gameInstructions.style.display = "none";
     rankingBtnGame.style.display = "none";
 
-    setTimeout(function () {
+    timeOut = setTimeout(function () {
         // Display the spaceship randomly on the screen, movin around the screen if it is not clicked for more than a second
-        setInterval(function () {
+        interval = setInterval(function () {
             stopBtn.style.top = Math.floor((Math.random() * 100) + 1) + "%";
             stopBtn.style.left = Math.floor((Math.random() * 100) + 1) + "%";
-        }
-            , 1000);
+        }, 1000);
         getReady.style.display = "none";
         ufo.style.display = "block";
         startGameWrapper.style.border = "none";
@@ -186,6 +188,8 @@ function replay() {
     mainPage.style.display = "flex";
     userName.value = "";
     startGame.style.marginTop = "300px";
+    clearTimeout(timeOut);
+    clearInterval(interval);
 }
 
 
