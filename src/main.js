@@ -30,13 +30,14 @@ const userScore = document.getElementById("user_score");
 
 // Global Variables
 const errorClass = errorUser.classList;
-    // Second page
+// Second page
 let random = Math.random() * 10000;
-    // Start and end of the timer
+// Start and end of the timer
 let startTimer;
 let endTimer;
-    // Define the timer variable
+// Define the timer variable
 let timer;
+let data;
 
 
 
@@ -47,11 +48,11 @@ startBtn.addEventListener("click", loginPage);
 startGame.addEventListener("click", gameStart);
 ufo.addEventListener("click", stopGame);
 replayBtn.addEventListener("click", replay);
-    //Ranking functions
+//Ranking functions
 rankingBtnMain.addEventListener("click", showRankingMain);
 rankingBtnGame.addEventListener("click", showRankingGame);
 rankingBtnFinish.addEventListener("click", showRankingFinish);
-    //Back functions
+//Back functions
 backBtnMain.addEventListener("click", backToMain);
 backBtnGame.addEventListener("click", backToGame);
 backBtnFinish.addEventListener("click", backToFinish);
@@ -129,14 +130,17 @@ function stopGame() {
     localStorage.setItem("dataScore", JSON.stringify(dataScore));
     console.log(dataScore);
 
-    //Get the data from the local storage and display it in the ranking page
-    let data = JSON.parse(localStorage.getItem("dataScore"));
-    data.forEach(item => {
+    //Get the data from the local storage
+    data = JSON.parse(localStorage.getItem("dataScore"));
+
+
+    //Display the data in the displayRankingFinish div, creating a p element for each object in the array, overwriting the previous p elements to display the new data.
+    displayRankingFinish.innerHTML = "";
+    for (let i = 0; i < data.length; i++) {
         let p = document.createElement("p");
-        p.textContent = item.name + ": " + item.score + "seconds";
+        p.textContent = `${data[i].name} - ${data[i].score} seconds`;
         displayRankingFinish.appendChild(p);
-    });
-  
+    }
 }
 
 
