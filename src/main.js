@@ -7,7 +7,6 @@ const rankingGame = document.getElementById("ranking-game");
 const rankingFinish = document.getElementById("ranking-finish");
 const displayRankingMain = document.getElementById("display-ranking-main");
 const displayRankingGame = document.getElementById("display-ranking-game");
-
 const displayRankingFinish = document.getElementById("display-ranking-finish");
 const rankingBtnMain = document.getElementById("ranking_btn");
 const rankingBtnGame = document.getElementById("ranking_btn_game");
@@ -42,7 +41,6 @@ let endTimer;
 // Define the timer variable
 let timer;
 let data;
-let ufoDisplayed = false;
 // Create an array of objects to store the username and its score
 let dataScore = [];
 
@@ -88,6 +86,7 @@ function loginPage() {
     }
 }
 
+//Start game
 function gameStart() {
     startGame.style.display = "none";
     getReady.style.display = "block";
@@ -95,12 +94,14 @@ function gameStart() {
     rankingBtnGame.style.display = "none";
 
     setTimeout(function () {
-        // Display the spaceship randomly on the screen
-        stopBtn.style.top = Math.floor((Math.random() * 90) + 1) + "%";
-        stopBtn.style.left = Math.floor((Math.random() * 90) + 1) + "%";
+        // Display the spaceship randomly on the screen, movin around the screen if it is not clicked for more than a second
+        setInterval(function () {
+            stopBtn.style.top = Math.floor((Math.random() * 100) + 1) + "%";
+            stopBtn.style.left = Math.floor((Math.random() * 100) + 1) + "%";
+        }
+            , 1000);
         getReady.style.display = "none";
         ufo.style.display = "block";
-        ufoDisplayed = true;
         startGameWrapper.style.border = "none";
         startGameWrapper.style.padding = "0";
         gamePage.style.cursor = "crosshair";
@@ -125,8 +126,6 @@ function stopGame() {
     rankingFinish.style.width = "30vw"
     // Show the score
     userScore.textContent = timer;
-    ufoDisplayed = false;
-
 
     //When the game is finished, store the username and its score in the dataScore array of the local storage. If there is already an object, create a new one inside the array.
     // dataScore = JSON.parse(localStorage.getItem("dataScore"));
@@ -142,7 +141,6 @@ function stopGame() {
 
     //Get the data from the local storage
     data = JSON.parse(localStorage.getItem("dataScore"));
-
 
     //Display the data in the displayRankingMain, displayRankingFinish and displayRankingFinish div, creating a p element for each object in the array, overwriting the previous p elements to display the new data.
     displayRankingMain.innerHTML = "";
@@ -217,6 +215,7 @@ function showRankingFinish() {
 
 }
 
+//Go back when the user clicks the arrow back
 function backToMain() {
     wrapperMain.style.display = "block";
     rankingMain.style.display = "none";
