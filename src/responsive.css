@@ -88,8 +88,8 @@
   }
 
   .game-content-wrapper {
-   display: flex;
-   flex-direction: row;
+    display: flex;
+    flex-direction: row;
 
   }
 
@@ -109,7 +109,7 @@
     flex-direction: row;
   }
 
-  .finish-content{
+  .finish-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -153,8 +153,8 @@
     color: #ffffffbf;
     border: 8px solid;
     border-image: linear-gradient(#ffffffbf,
-    #403f3f,
-    #776e6e) 1;
+        #403f3f,
+        #776e6e) 1;
     animation: rotate-3 2.5s ease-in infinite;
   }
 
@@ -211,7 +211,7 @@
     flex-direction: row;
   }
 
-  .finish-content{
+  .finish-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -244,7 +244,7 @@
   }
 
 
-  
+
 
   .error {
     padding-left: 5rem;
@@ -262,8 +262,8 @@
     color: #ffffffbf;
     border: 8px solid;
     border-image: linear-gradient(#ffffffbf,
-    #403f3f,
-    #776e6e) 1;
+        #403f3f,
+        #776e6e) 1;
     animation: rotate-3 2.5s ease-in infinite;
   }
 
