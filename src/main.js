@@ -89,9 +89,6 @@ function loginPage() {
     }
 }
 
-
-
-
 function gameStart() {
     startGame.style.display = "none";
     getReady.style.display = "block";
@@ -99,6 +96,8 @@ function gameStart() {
     rankingBtnGame.style.display = "none";
 
     setTimeout(function () {
+        stopBtn.style.top = Math.floor((Math.random() * 90) + 1) + "%";
+        stopBtn.style.left = Math.floor((Math.random() * 90) + 1) + "%";
         getReady.style.display = "none";
         ufo.style.display = "block";
         startGameWrapper.style.border = "none";
@@ -171,6 +170,7 @@ function replay() {
     finishSection.style.display = "none";
     mainPage.style.display = "flex";
     userName.value = "";
+    startGame.style.marginTop = "300px";
 }
 
 
