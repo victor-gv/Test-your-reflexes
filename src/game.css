@@ -283,12 +283,11 @@ body {
 .third-ranking-btn {
   position: absolute;
   width: 100%;
-  top: 46rem;
+  top: 43rem;
 }
 
 
 /* RANKING */
-
 .ranking {
   display: none;
   font-family: 'Games', sans-serif;

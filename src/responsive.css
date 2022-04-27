@@ -88,14 +88,15 @@
   }
 
   .game-content-wrapper {
-    display: flex;
-    flex-direction: row;
+   display: flex;
+   flex-direction: row;
+
   }
 
   .start-game {
-    width: 70vw;
-    margin-right: 50px;
-    padding-top: 160px;
+    min-width: 40rem;
+    margin-right: 3rem;
+    padding: 160px 20px 0px 20px;
     border: 8px solid;
     border-image: linear-gradient(#ff512f,
         #dd2476,
@@ -104,9 +105,8 @@
   }
 
   .finish-wrapper {
-    display: grid;
-    grid-template-columns: 63% 37%;
-    column-gap: 20px;
+    display: flex;
+    flex-direction: row;
   }
 
   .finish-content{
@@ -196,9 +196,9 @@
   }
 
   .start-game {
-    width: 70vw;
-    margin-right: 100px;
-    padding-top: 160px;
+    min-width: 45rem;
+    margin-right: 3rem;
+    padding: 160px 20px 0px 20px;
     border: 8px solid;
     border-image: linear-gradient(#ff512f,
         #dd2476,
