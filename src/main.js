@@ -5,6 +5,7 @@ const startBtn = document.getElementById("start_btn");
 const rankingMain = document.getElementById("ranking-main");
 const rankingGame = document.getElementById("ranking-game");
 const rankingFinish = document.getElementById("ranking-finish");
+const displayRankingFinish = document.getElementById("display-ranking-finish");
 const rankingBtnMain = document.getElementById("ranking_btn");
 const rankingBtnGame = document.getElementById("ranking_btn_game");
 const rankingBtnFinish = document.getElementById("ranking_btn_finish");
@@ -97,7 +98,7 @@ function gameStart() {
         gamePage.style.cursor = "crosshair";
         // Create the start date
         startTimer = Date.now();
-    }, random)
+    }, 1)
 }
 
 
@@ -127,6 +128,15 @@ function stopGame() {
     });
     localStorage.setItem("dataScore", JSON.stringify(dataScore));
     console.log(dataScore);
+
+    //Get the data from the local storage and display it in the ranking page
+    let data = JSON.parse(localStorage.getItem("dataScore"));
+    data.forEach(item => {
+        let p = document.createElement("p");
+        p.textContent = item.name + ": " + item.score + "seconds";
+        displayRankingFinish.appendChild(p);
+    });
+  
 }
 
 
