@@ -188,7 +188,7 @@ body {
 .second-ranking-btn {
   position: absolute;
   width: 100%;
-  top: 16rem;
+  top: 46rem;
 }
 
 
@@ -291,11 +291,10 @@ body {
   font-family: 'Games', sans-serif;
   flex-direction: column;
   align-items: center;
-  font-family: 'Games', sans-serif;
   letter-spacing: .3rem;
   min-width: 320px;
   height: 620px;
-  color: #ffffffbf;
+  color: #dd2476;
   border: 8px solid;
   border-image: linear-gradient(#ffffffbf,
       #403f3f,
@@ -307,6 +306,12 @@ body {
 .ranking-wrapper {
   display: grid;
   grid-template-rows: 570px;
+}
+
+.ranking p {
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+  color: #ffec1c;
 }
 
 .back-btn {

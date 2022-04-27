@@ -5,6 +5,9 @@ const startBtn = document.getElementById("start_btn");
 const rankingMain = document.getElementById("ranking-main");
 const rankingGame = document.getElementById("ranking-game");
 const rankingFinish = document.getElementById("ranking-finish");
+const displayRankingMain = document.getElementById("display-ranking-main");
+const displayRankingGame = document.getElementById("display-ranking-game");
+const displayRankingFinish = document.getElementById("display-ranking-finish");
 const rankingBtnMain = document.getElementById("ranking_btn");
 const rankingBtnGame = document.getElementById("ranking_btn_game");
 const rankingBtnFinish = document.getElementById("ranking_btn_finish");
@@ -16,6 +19,7 @@ const startGameWrapper = document.getElementById("start-game-wrapper");
 const finishWrapper = document.getElementById("finish-wrapper")
 const gameInstructions = document.getElementById("game-instructions");
 const startGame = document.getElementById("start_game");
+const gameContentWrapper = document.getElementById("game-content-wrapper");
 const stopBtn = document.getElementById("stop_btn");
 const replayBtn = document.getElementById("replay_btn");
 const mainPage = document.getElementById("main_page");
@@ -25,14 +29,43 @@ const ufo = document.getElementById("stop_btn");
 const finishSection = document.getElementById("finish_section");
 const userScore = document.getElementById("user_score");
 
+
+
 // Global Variables
 const errorClass = errorUser.classList;
+// Second page
+let random = Math.random() * 10000;
+// Start and end of the timer
+let startTimer;
+let endTimer;
+// Define the timer variable
+let timer;
+let data;
+// Create an array of objects to store the username and its score
+let dataScore = [];
+
+
+
+
 
 //Event listeners
 startBtn.addEventListener("click", loginPage);
+startGame.addEventListener("click", gameStart);
+ufo.addEventListener("click", stopGame);
+replayBtn.addEventListener("click", replay);
+//Ranking functions
+rankingBtnMain.addEventListener("click", showRankingMain);
+rankingBtnGame.addEventListener("click", showRankingGame);
+rankingBtnFinish.addEventListener("click", showRankingFinish);
+//Back functions
+backBtnMain.addEventListener("click", backToMain);
+backBtnGame.addEventListener("click", backToGame);
+backBtnFinish.addEventListener("click", backToFinish);
+
+
+
 
 //Functions
-
 // Main page
 function loginPage() {
     //validate username
@@ -45,22 +78,15 @@ function loginPage() {
         }
         //change page
     } else {
+        //Store the username 
         errorUser.textContent = "";
         mainPage.style.display = "none";
         gamePage.style.display = "block";
+        startGame.style.display = "inline-block";
     }
 }
 
-
-// Second page
-startGame.addEventListener("click", gameStart);
-let random = Math.random() * 10000;
-console.log(random);
-// Start and end of the timer
-let startTimer;
-let endTimer;
-
-
+//Start game
 function gameStart() {
     startGame.style.display = "none";
     getReady.style.display = "block";
@@ -68,8 +94,16 @@ function gameStart() {
     rankingBtnGame.style.display = "none";
 
     setTimeout(function () {
+        // Display the spaceship randomly on the screen, movin around the screen if it is not clicked for more than a second
+        setInterval(function () {
+            stopBtn.style.top = Math.floor((Math.random() * 100) + 1) + "%";
+            stopBtn.style.left = Math.floor((Math.random() * 100) + 1) + "%";
+        }
+            , 1000);
         getReady.style.display = "none";
         ufo.style.display = "block";
+        startGameWrapper.style.border = "none";
+        startGameWrapper.style.padding = "0";
         gamePage.style.cursor = "crosshair";
         // Create the start date
         startTimer = Date.now();
@@ -77,12 +111,8 @@ function gameStart() {
 }
 
 
+
 //Game function
-ufo.addEventListener("click", stopGame);
-
-// Define the timer variable
-let timer;
-
 // Stop the game when the ufo is clicked
 function stopGame() {
     ufo.style.display = "none";
@@ -90,49 +120,76 @@ function stopGame() {
     endTimer = Date.now();
     // Calculates the start and end to get the time in milliseconds
     timer = (endTimer - startTimer) / 1000;
-    console.log(timer);
     // Hide the game page and show the finish page
     gamePage.style.display = "none";
     finishSection.style.display = "block";
-    rankingFinish.style.width = "40vw"
+    rankingFinish.style.width = "30vw"
     // Show the score
     userScore.textContent = timer;
+
+    //When the game is finished, store the username and its score in the dataScore array of the local storage. If there is already an object, create a new one inside the array.
+    // dataScore = JSON.parse(localStorage.getItem("dataScore"));
+    if (dataScore == null) {
+        dataScore = [];
+    }
+    dataScore.push({
+        name: userName.value,
+        score: timer
+    });
+    localStorage.setItem("dataScore", JSON.stringify(dataScore));
+    console.log(dataScore);
+
+    //Get the data from the local storage
+    data = JSON.parse(localStorage.getItem("dataScore"));
+
+    //Display the data in the displayRankingMain, displayRankingFinish and displayRankingFinish div, creating a p element for each object in the array, overwriting the previous p elements to display the new data.
+    displayRankingMain.innerHTML = "";
+    displayRankingGame.innerHTML = "";
+    displayRankingFinish.innerHTML = "";
+    for (let i = 0; i < data.length; i++) {
+        let p = document.createElement("p");
+        p.textContent = "🚀" + data[i].name + ": " + data[i].score + " seconds";
+        displayRankingMain.appendChild(p);
+        deleteLastElement()
+    }
+    for (let i = 0; i < data.length; i++) {
+        let p = document.createElement("p");
+        p.textContent = "🚀" + data[i].name + ": " + data[i].score + " seconds";
+        displayRankingGame.appendChild(p);
+        deleteLastElement()
+    }
+    for (let i = 0; i < data.length; i++) {
+        let p = document.createElement("p");
+        p.textContent = "🚀" + data[i].name + ": " + data[i].score + " seconds";
+        displayRankingFinish.appendChild(p);
+        deleteLastElement()
+    }
 }
 
-replayBtn.addEventListener("click", replay);
+//If the ranking has more than 12 elements, delete the first one to let the new one to be displayed
+function deleteLastElement() {
+    if (displayRankingMain.childElementCount > 12) {
+        displayRankingMain.removeChild(displayRankingMain.firstChild);
+    }
+    if (displayRankingGame.childElementCount > 12) {
+        displayRankingGame.removeChild(displayRankingGame.firstChild);
+    }
+    if (displayRankingFinish.childElementCount > 12) {
+        displayRankingFinish.removeChild(displayRankingFinish.firstChild);
+    }
+}
+
 
 // Hide the finish page and show the main page
 function replay() {
     finishSection.style.display = "none";
-    mainPage.style.display = "block";
+    mainPage.style.display = "flex";
+    userName.value = "";
+    startGame.style.marginTop = "300px";
 }
 
-// Create an array
-let dataScore = [{
-    username: "",
-    score: "",
-}];
 
-// Convert the array into a string and save it in the local storage
-localStorage.setItem("playersScore", JSON.stringify(dataScore));
-
-// Pulls the array out of the local storage
-let datos = localStorage.getItem("playersScore");
-
-// Converts the array back to an object and displays it on console
-console.log(JSON.parse(datos));
-
-
-
-
-
-
-//Ranking functions
-rankingBtnMain.addEventListener("click", showRankingMain);
-rankingBtnGame.addEventListener("click", showRankingGame);
-rankingBtnFinish.addEventListener("click", showRankingFinish);
-
-
+// Show the ranking page when the button is clicked
 function showRankingMain() {
     wrapperMain.style.display = "none";
     rankingMain.style.display = "flex";
@@ -158,21 +215,11 @@ function showRankingFinish() {
 
 }
 
-
-
-//Back functions
-backBtnMain.addEventListener("click", backToMain);
-backBtnGame.addEventListener("click", backToGame);
-backBtnFinish.addEventListener("click", backToFinish);
-
-
+//Go back when the user clicks the arrow back
 function backToMain() {
     wrapperMain.style.display = "block";
     rankingMain.style.display = "none";
-    scoreHidden = true;
-    console.log(scoreHidden);
 }
-
 
 function backToGame() {
     startGameWrapper.style.display = "block";
@@ -186,19 +233,3 @@ function backToFinish() {
     rankingBtnFinish.style.display = "block";
 }
 
-
-//Viewport adapt function
-// let vw = Math.max(document.documentElement.clientWidth);
-// let scoreHidden = false;
-
-// window.addEventListener("resize", viewport);
-
-// function viewport() {
-//     if (scoreHidden && vw > 1024) {
-//         rankingMain.style.display = "flex";
-//         scoreHidden = false;
-//     } else if (vw < 1024) {
-//         console.log(scoreHidden);
-//         rankingMain.style.display = "none";
-//     }
-// }
