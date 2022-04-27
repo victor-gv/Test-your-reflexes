@@ -90,6 +90,8 @@ function loginPage() {
 }
 
 
+
+
 function gameStart() {
     startGame.style.display = "none";
     getReady.style.display = "block";
@@ -100,6 +102,7 @@ function gameStart() {
         getReady.style.display = "none";
         ufo.style.display = "block";
         startGameWrapper.style.border = "none";
+        startGameWrapper.style.padding = "0";
         gamePage.style.cursor = "crosshair";
         // Create the start date
         startTimer = Date.now();

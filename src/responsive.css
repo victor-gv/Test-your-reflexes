@@ -196,6 +196,7 @@
   }
 
   .start-game {
+    position: relative;
     min-width: 45rem;
     margin-right: 3rem;
     padding: 160px 20px 0px 20px;
@@ -204,6 +205,10 @@
         #dd2476,
         #1c64ff) 1;
     animation: rotate 2.5s ease-in infinite;
+  }
+
+  .ufo {
+    position: absolute;
   }
 
   .finish-wrapper {
