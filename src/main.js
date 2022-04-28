@@ -138,7 +138,6 @@ function stopGame() {
         score: timer
     });
     localStorage.setItem("dataScore", JSON.stringify(dataScore));
-    console.log(dataScore);
 
     //Get the data from the local storage
     data = JSON.parse(localStorage.getItem("dataScore"));
