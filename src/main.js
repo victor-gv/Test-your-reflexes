@@ -130,7 +130,6 @@ function stopGame() {
     userScore.textContent = timer;
 
     //When the game is finished, store the username and its score in the dataScore array of the local storage. If there is already an object, create a new one inside the array.
-    // dataScore = JSON.parse(localStorage.getItem("dataScore"));
     if (dataScore == null) {
         dataScore = [];
     }
@@ -139,7 +138,6 @@ function stopGame() {
         score: timer
     });
     localStorage.setItem("dataScore", JSON.stringify(dataScore));
-    console.log(dataScore);
 
     //Get the data from the local storage
     data = JSON.parse(localStorage.getItem("dataScore"));
